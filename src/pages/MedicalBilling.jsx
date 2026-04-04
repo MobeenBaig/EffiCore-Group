@@ -5,6 +5,7 @@ import '../styles/header.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import doctorImage from '../assets/Doctor.png';
+import questionIcon from '../assets/questionicon.png';
 
 const steps = [
   {
@@ -30,6 +31,20 @@ const steps = [
 ];
 
 const stepColors = ['#E9FFF2', '#F2FFF7', '#E3FFEC', '#EEFFF6', '#E7FFEF'];
+
+const allServices = [
+  'Medical Billing & Coding',
+  'Dental Billing & Coding',
+  'Credentialing',
+  'AR Recovery',
+  'Practice Development',
+  'HEDIS',
+  'PCMH',
+  'CCM',
+  'Patient Scheduling',
+  'Document Management',
+  'Practice Operations Audit'
+];
 
 export default function MedicalBilling() {
   useEffect(() => {
@@ -91,7 +106,7 @@ export default function MedicalBilling() {
           position: 'relative',
           background: 'linear-gradient(135deg, var(--cream-soft) 0%, var(--cream) 60%, #D6EDEA 100%)',
           overflow: 'hidden',
-          padding: '80px 0 40px 0',
+          padding: '80px 0 0 0',
           margin: 0,
         }}>
           <div style={{ maxWidth: '1250px', margin: '0 auto', padding: '0 40px' }}>
@@ -112,7 +127,7 @@ export default function MedicalBilling() {
             display: 'flex',
             flexWrap: 'wrap',
             alignItems: 'center',
-            gap: 40,
+            gap: 80,
             position: 'relative',
             zIndex: 1,
             opacity: 0,
@@ -163,80 +178,416 @@ export default function MedicalBilling() {
           padding: '80px 0 60px 0',
           margin: 0,
         }}>
-          <div style={{ maxWidth: '1250px', margin: '0 auto', padding: '0 40px' }}>
-          <div className="section-header" style={{marginBottom: 64, position: 'relative', zIndex: 1}}>
-            <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>How We Handle Your Billing, Step by Step</div>
-          </div>
-          <div className="billing-steps" style={{
+          {/* Desktop Layout: Sidebar left, Cards right */}
+          <div className="desktop-layout" style={{
+            maxWidth: '1250px',
+            margin: '0 auto',
+            padding: '0 40px',
             display: 'flex',
-            flexDirection: 'column',
-            gap: '64px',
-            position: 'relative',
-            zIndex: 1,
-            alignItems: 'center',
-            width: '100%',
+            gap: '120px',
+            alignItems: 'flex-start',
           }}>
-            {steps.map((step, idx) => {
-              let marginLeft = 'auto';
-              let marginRight = 'auto';
-              
-              // Create zigzag pattern: left -> center -> right -> center -> left
-              if (idx === 0) {
-                // Card 1: Far left
-                marginLeft = '0';
-                marginRight = 'auto';
-              } else if (idx === 1) {
-                // Card 2: Center
-                marginLeft = 'auto';
-                marginRight = 'auto';
-              } else if (idx === 2) {
-                // Card 3: Far right
-                marginLeft = 'auto';
-                marginRight = '0';
-              } else if (idx === 3) {
-                // Card 4: Center
-                marginLeft = 'auto';
-                marginRight = 'auto';
-              } else if (idx === 4) {
-                // Card 5: Far left
-                marginLeft = '0';
-                marginRight = 'auto';
-              }
-              
-              return (
-              <div key={step.title} className="step-card reveal" style={{
-                background: stepColors[idx % stepColors.length],
-                borderRadius: 18,
-                boxShadow: '0 4px 24px rgba(45,59,78,0.08)',
-                border: '1.5px solid var(--border)',
-                padding: '32px 24px',
-                textAlign: 'center',
-                transition: 'box-shadow 0.2s',
-                width: '100%',
-                maxWidth: '280px',
-                marginLeft: marginLeft,
-                marginRight: marginRight,
+            {/* Sidebar Menu - Left side on desktop */}
+            <div className="sidebar-wrapper" style={{
+              flex: '0 0 280px',
+              position: 'sticky',
+              top: '100px',
+              alignSelf: 'flex-start',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px',
+            }}>
+              <div style={{
+                background: 'linear-gradient(135deg, #0f766e, #14b8a6)',
+                borderRadius: '20px',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
+                overflow: 'hidden',
               }}>
                 <div style={{
-                  fontSize: 'clamp(1.05rem, 2.3vw, 1.25rem)',
-                  fontWeight: 700,
-                  color: 'var(--teal-dark)',
-                  marginBottom: 10,
-                  letterSpacing: 0.5,
-                }}>{step.title}</div>
-                <div style={{
-                  fontSize: 'clamp(0.9rem, 2vw, 1rem)',
-                  color: 'var(--text-mid)',
-                  lineHeight: 1.6,
-                }}>{step.desc}</div>
+                  background: 'linear-gradient(135deg, #0f766e, #14b8a6)',
+                  padding: '24px 20px',
+                  textAlign: 'left',
+                  borderBottom: '1px solid rgba(255,255,255,0.15)',
+                }}>
+                  <h3 style={{
+                    color: 'white',
+                    fontSize: '0.9rem',
+                    fontWeight: 600,
+                    margin: 0,
+                    fontFamily: "'Syne', sans-serif",
+                    letterSpacing: '0px',
+                    textTransform: 'uppercase',
+                  }}>All Services</h3>
+                </div>
+                <div>
+                  <ul style={{
+                    listStyle: 'none',
+                    margin: 0,
+                    padding: 0,
+                  }}>
+                    {allServices.map((service, idx) => (
+                      <li key={service} style={{
+                        borderBottom: '1px solid rgba(255,255,255,0.08)',
+                        padding: '0',
+                      }}>
+                        <Link 
+                          to={`/${service.toLowerCase().replace(/ /g, '-').replace(/&/g, '')}`}
+                          style={{
+                            display: 'block',
+                            padding: '12px 20px',
+                            color: 'white',
+                            textDecoration: 'none',
+                            fontSize: '0.85rem',
+                            fontWeight: 500,
+                            transition: 'all 0.2s ease',
+                            background: service === 'Medical Billing & Coding' ? 'rgba(255,255,255,0.12)' : 'transparent',
+                            borderLeft: service === 'Medical Billing & Coding' ? '3px solid #ffd700' : '3px solid transparent',
+                            textAlign: 'left',
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
+                            e.currentTarget.style.paddingLeft = '24px';
+                          }}
+                          onMouseLeave={(e) => {
+                            if (service !== 'Medical Billing & Coding') {
+                              e.currentTarget.style.background = 'transparent';
+                            } else {
+                              e.currentTarget.style.background = 'rgba(255,255,255,0.12)';
+                            }
+                            e.currentTarget.style.paddingLeft = '20px';
+                          }}
+                        >
+                          {service}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            );
-            })}
+
+              {/* Help Card */}
+              <div style={{
+                background: 'linear-gradient(135deg, #0f766e, #14b8a6)',
+                borderRadius: '20px',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
+                overflow: 'hidden',
+                padding: '28px 20px',
+                textAlign: 'center',
+                border: '1px solid #14b8a6',
+              }}>
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '12px',
+                  marginBottom: '16px',
+                  paddingBottom: '16px',
+                  borderBottom: '1px solid rgba(255,255,255,0.3)',
+                }}>
+                  <img src={questionIcon} alt="Help" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
+                  <h4 style={{
+                    fontSize: '1.1rem',
+                    fontWeight: 700,
+                    color: 'white',
+                    margin: 0,
+                    fontFamily: "'Syne', sans-serif",
+                  }}>Do you need any help?</h4>
+                </div>
+                <div style={{
+                  fontSize: '1.35rem',
+                  fontWeight: 700,
+                  color: 'white',
+                  marginBottom: '8px',
+                  fontFamily: "'DM Sans', sans-serif",
+                }}>512-920-6338</div>
+                <div style={{
+                  fontSize: '0.9rem',
+                  color: 'white',
+                  fontWeight: 500,
+                  marginBottom: '16px',
+                }}>mark@medhealer360.org</div>
+                <Link 
+                  to="/contact"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    background: 'white',
+                    color: '#0f766e',
+                    padding: '10px 20px',
+                    borderRadius: '6px',
+                    textDecoration: 'none',
+                    fontWeight: 600,
+                    fontSize: '0.9rem',
+                    transition: 'all 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, #064e3b, #0d9488)';
+                    e.currentTarget.style.color = 'white';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'white';
+                    e.currentTarget.style.color = '#0f766e';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                >
+                  Contact Us →
+                </Link>
+              </div>
+            </div>
+
+            {/* Cards Section - Right side on desktop */}
+            <div style={{
+              flex: 1,
+              minWidth: 0,
+            }}>
+              <div className="section-header" style={{marginBottom: 64, position: 'relative', zIndex: 1}}>
+                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>How We Handle Your Billing, Step by Step</div>
+              </div>
+              <div className="billing-steps" style={{
+                display: 'flex',
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                gap: '24px',
+                justifyContent: 'flex-start',
+                position: 'relative',
+                zIndex: 1,
+                alignItems: 'stretch',
+                width: '100%',
+              }}>
+                {steps.map((step, idx) => {
+                  return (
+                  <div key={step.title} className="step-card reveal" style={{
+                    background: stepColors[idx % stepColors.length],
+                    borderRadius: 18,
+                    boxShadow: '0 4px 24px rgba(45,59,78,0.08)',
+                    border: '1.5px solid var(--border)',
+                    padding: '32px 24px',
+                    textAlign: 'center',
+                    transition: 'box-shadow 0.2s',
+                    flex: '1 1 auto',
+                    minWidth: '180px',
+                    maxWidth: '240px',
+                  }}>
+                    <div style={{
+                      fontSize: 'clamp(1.05rem, 2.3vw, 1.25rem)',
+                      fontWeight: 700,
+                      color: 'var(--teal-dark)',
+                      marginBottom: 10,
+                      letterSpacing: 0.5,
+                    }}>{step.title}</div>
+                    <div style={{
+                      fontSize: 'clamp(0.9rem, 2vw, 1rem)',
+                      color: 'var(--text-mid)',
+                      lineHeight: 1.6,
+                    }}>{step.desc}</div>
+                  </div>
+                );
+                })}
+              </div>
+            </div>
           </div>
+
+          {/* Mobile Layout: Cards first, then Sidebar below */}
+          <div className="mobile-layout" style={{
+            maxWidth: '1250px',
+            margin: '0 auto',
+            padding: '0 20px',
+            display: 'none',
+            flexDirection: 'column',
+            gap: '40px',
+          }}>
+            {/* Cards Section - First on mobile */}
+            <div>
+              <div className="section-header" style={{marginBottom: 40, position: 'relative', zIndex: 1}}>
+                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>How We Handle Your Billing, Step by Step</div>
+              </div>
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '20px',
+                width: '100%',
+              }}>
+                {steps.map((step, idx) => {
+                  return (
+                  <div key={step.title} style={{
+                    background: stepColors[idx % stepColors.length],
+                    borderRadius: 18,
+                    boxShadow: '0 4px 24px rgba(45,59,78,0.08)',
+                    border: '1.5px solid var(--border)',
+                    padding: '24px 20px',
+                    textAlign: 'center',
+                    transition: 'box-shadow 0.2s',
+                    width: '100%',
+                  }}>
+                    <div style={{
+                      fontSize: '1.2rem',
+                      fontWeight: 700,
+                      color: 'var(--teal-dark)',
+                      marginBottom: 10,
+                      letterSpacing: 0.5,
+                    }}>{step.title}</div>
+                    <div style={{
+                      fontSize: '0.95rem',
+                      color: 'var(--text-mid)',
+                      lineHeight: 1.6,
+                    }}>{step.desc}</div>
+                  </div>
+                );
+                })}
+              </div>
+            </div>
+
+            {/* Sidebar Menu - Below cards on mobile */}
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px',
+            }}>
+              <div style={{
+                background: 'linear-gradient(135deg, #0f766e, #14b8a6)',
+                borderRadius: '20px',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
+                overflow: 'hidden',
+              }}>
+                <div style={{
+                  background: 'linear-gradient(135deg, #0f766e, #14b8a6)',
+                  padding: '20px 16px',
+                  textAlign: 'left',
+                  borderBottom: '1px solid rgba(255,255,255,0.15)',
+                }}>
+                  <h3 style={{
+                    color: 'white',
+                    fontSize: '0.9rem',
+                    fontWeight: 600,
+                    margin: 0,
+                    fontFamily: "'Syne', sans-serif",
+                    letterSpacing: '0px',
+                    textTransform: 'uppercase',
+                  }}>All Services</h3>
+                </div>
+                <div>
+                  <ul style={{
+                    listStyle: 'none',
+                    margin: 0,
+                    padding: 0,
+                  }}>
+                    {allServices.map((service, idx) => (
+                      <li key={service} style={{
+                        borderBottom: '1px solid rgba(255,255,255,0.08)',
+                        padding: '0',
+                      }}>
+                        <Link 
+                          to={`/${service.toLowerCase().replace(/ /g, '-').replace(/&/g, '')}`}
+                          style={{
+                            display: 'block',
+                            padding: '12px 16px',
+                            color: 'white',
+                            textDecoration: 'none',
+                            fontSize: '0.85rem',
+                            fontWeight: 500,
+                            transition: 'all 0.2s ease',
+                            background: service === 'Medical Billing & Coding' ? 'rgba(255,255,255,0.12)' : 'transparent',
+                            borderLeft: service === 'Medical Billing & Coding' ? '3px solid #ffd700' : '3px solid transparent',
+                            textAlign: 'left',
+                          }}
+                        >
+                          {service}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Help Card */}
+              <div style={{
+                background: 'linear-gradient(135deg, #0f766e, #14b8a6)',
+                borderRadius: '20px',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
+                overflow: 'hidden',
+                padding: '24px 16px',
+                textAlign: 'center',
+                border: '1px solid #14b8a6',
+              }}>
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '10px',
+                  marginBottom: '14px',
+                  paddingBottom: '14px',
+                  borderBottom: '1px solid rgba(255,255,255,0.3)',
+                }}>
+                  <img src={questionIcon} alt="Help" style={{ width: '35px', height: '35px', objectFit: 'contain' }} />
+                  <h4 style={{
+                    fontSize: '1rem',
+                    fontWeight: 700,
+                    color: 'white',
+                    margin: 0,
+                    fontFamily: "'Syne', sans-serif",
+                  }}>Do you need any help?</h4>
+                </div>
+                <div style={{
+                  fontSize: '1.2rem',
+                  fontWeight: 700,
+                  color: 'white',
+                  marginBottom: '6px',
+                  fontFamily: "'DM Sans', sans-serif",
+                }}>512-920-6338</div>
+                <div style={{
+                  fontSize: '0.85rem',
+                  color: 'white',
+                  fontWeight: 500,
+                  marginBottom: '14px',
+                }}>mark@medhealer360.org</div>
+                <Link 
+                  to="/contact"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    background: 'white',
+                    color: '#0f766e',
+                    padding: '8px 16px',
+                    borderRadius: '6px',
+                    textDecoration: 'none',
+                    fontWeight: 600,
+                    fontSize: '0.85rem',
+                    transition: 'all 0.2s ease',
+                  }}
+                >
+                  Contact Us →
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
         <Footer />
       </div>
+
+      {/* Responsive styles */}
+      <style>{`
+        @media (min-width: 769px) {
+          .desktop-layout {
+            display: flex !important;
+          }
+          .mobile-layout {
+            display: none !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .desktop-layout {
+            display: none !important;
+          }
+          .mobile-layout {
+            display: flex !important;
+          }
+        }
+      `}</style>
     </>
   );
 }
