@@ -71,7 +71,7 @@
 }
 
 .nav-links a {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: clamp(0.75rem, 1vw, 1.125rem);
   font-weight: 600;
   letter-spacing: 0.04em;

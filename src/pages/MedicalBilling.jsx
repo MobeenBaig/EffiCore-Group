@@ -63,10 +63,10 @@ export default function MedicalBilling() {
 
   return (
     <>
-      {/* Load home2 fonts: DM Sans body + Syne headers + Playfair Display */}
-      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+      {/* Load Nunito font for entire page */}
+      <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet" />
       <Header />
-      <div style={{ fontFamily: "'DM Sans', sans-serif", overflowX: 'hidden' }}>
+      <div style={{ fontFamily: "'Nunito', sans-serif", overflowX: 'hidden' }}>
         <div className="page-hero" style={{
           position: 'relative',
           background: 'linear-gradient(to bottom, #064e3b, #134e4a, #064e3b)',
@@ -198,13 +198,13 @@ export default function MedicalBilling() {
               gap: '24px',
             }}>
               <div style={{
-                background: 'linear-gradient(135deg, #0f766e, #14b8a6)',
+                background: 'linear-gradient(to bottom, #064e3b, #134e4a, #064e3b)',
                 borderRadius: '20px',
                 boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
                 overflow: 'hidden',
               }}>
                 <div style={{
-                  background: 'linear-gradient(135deg, #0f766e, #14b8a6)',
+                  background: 'linear-gradient(to bottom, #064e3b, #134e4a, #064e3b)',
                   padding: '24px 20px',
                   textAlign: 'left',
                   borderBottom: '1px solid rgba(255,255,255,0.15)',
@@ -214,7 +214,7 @@ export default function MedicalBilling() {
                     fontSize: '0.9rem',
                     fontWeight: 600,
                     margin: 0,
-                    fontFamily: "'Syne', sans-serif",
+                    fontFamily: "'Nunito', sans-serif",
                     letterSpacing: '0px',
                     textTransform: 'uppercase',
                   }}>All Services</h3>
@@ -291,7 +291,7 @@ export default function MedicalBilling() {
                     fontWeight: 700,
                     color: 'white',
                     margin: 0,
-                    fontFamily: "'Syne', sans-serif",
+                    fontFamily: "'Nunito', sans-serif",
                   }}>Do you need any help?</h4>
                 </div>
                 <div style={{
@@ -299,7 +299,7 @@ export default function MedicalBilling() {
                   fontWeight: 700,
                   color: 'white',
                   marginBottom: '8px',
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Nunito', sans-serif",
                 }}>512-920-6338</div>
                 <div style={{
                   fontSize: '0.9rem',
@@ -463,7 +463,7 @@ export default function MedicalBilling() {
                     fontSize: '0.9rem',
                     fontWeight: 600,
                     margin: 0,
-                    fontFamily: "'Syne', sans-serif",
+                    fontFamily: "'Nunito', sans-serif",
                     letterSpacing: '0px',
                     textTransform: 'uppercase',
                   }}>All Services</h3>
@@ -528,7 +528,7 @@ export default function MedicalBilling() {
                     fontWeight: 700,
                     color: 'white',
                     margin: 0,
-                    fontFamily: "'Syne', sans-serif",
+                    fontFamily: "'Nunito', sans-serif",
                   }}>Do you need any help?</h4>
                 </div>
                 <div style={{
@@ -536,7 +536,7 @@ export default function MedicalBilling() {
                   fontWeight: 700,
                   color: 'white',
                   marginBottom: '6px',
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'Nunito', sans-serif",
                 }}>512-920-6338</div>
                 <div style={{
                   fontSize: '0.85rem',

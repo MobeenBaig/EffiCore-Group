@@ -26,7 +26,7 @@ const styles = `
   html { scroll-behavior: smooth; font-size: 16px; }
 
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
     background: var(--cream-soft);
     color: var(--text-dark);
     overflow-x: hidden;
@@ -72,7 +72,7 @@ const styles = `
     list-style: none;
   }
   .nav-links a {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: clamp(0.75rem, 1vw, 1.125rem);
     font-weight: 600;
     letter-spacing: 0.04em; text-transform: uppercase;
@@ -148,7 +148,7 @@ const styles = `
     display: inline-flex; align-items: center; gap: 8px;
     background: rgba(78,205,196,0.15); border: 1px solid rgba(78,205,196,0.4);
     color: var(--teal-dark); padding: 7px 16px; border-radius: 50px;
-    font-family: 'Syne', sans-serif; font-size: 0.78rem;
+    font-family: 'Nunito', sans-serif; font-size: 0.78rem;
     font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
     margin-bottom: 28px;
     animation: fadeUp 0.7s ease both;
@@ -156,7 +156,7 @@ const styles = `
   .hero-tag span { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-light); display: block; }
 
   .hero h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Nunito', sans-serif;
     font-size: clamp(2.8rem, 5vw, 4.2rem);
     font-weight: 700; line-height: 1.15;
     color: var(--primary);
@@ -180,7 +180,7 @@ const styles = `
   .btn-primary {
     background: var(--teal-dark); color: var(--white);
     padding: 14px 32px; border-radius: 10px;
-    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-family: 'Nunito', sans-serif; font-weight: 700;
     font-size: 0.9rem; letter-spacing: 0.04em;
     text-decoration: none; border: 2px solid var(--teal-dark);
     transition: all 0.25s; display: inline-flex; align-items: center; gap: 8px;
@@ -190,7 +190,7 @@ const styles = `
   .btn-outline {
     background: transparent; color: var(--primary);
     padding: 14px 32px; border-radius: 10px;
-    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-family: 'Nunito', sans-serif; font-weight: 700;
     font-size: 0.9rem; letter-spacing: 0.04em;
     text-decoration: none; border: 2px solid var(--primary);
     transition: all 0.25s; display: inline-flex; align-items: center; gap: 8px;
@@ -223,7 +223,7 @@ const styles = `
     stroke: var(--white);
   }
   .hero-card-header div h3 {
-    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-family: 'Nunito', sans-serif; font-weight: 700;
     font-size: 1.05rem; color: var(--primary);
   }
   .hero-card-header div p { font-size: 0.82rem; color: var(--text-light); margin-top: 2px; }
@@ -231,7 +231,7 @@ const styles = `
   .metric-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
   .metric-item { text-align: center; }
   .metric-item .val {
-    font-family: 'Syne', sans-serif; font-size: 1.8rem;
+    font-family: 'Nunito', sans-serif; font-size: 1.8rem;
     font-weight: 800; color: var(--teal-dark); display: block;
   }
   .metric-item .lbl { font-size: 0.72rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
@@ -260,7 +260,7 @@ const styles = `
   .hero-mini-card .mini-icon svg { color: var(--teal-dark); stroke: var(--teal-dark); }
   .hero-mini-card2 .mini-icon { color: var(--white); }
   .hero-mini-card2 .mini-icon svg { color: var(--white); stroke: var(--white); }
-  .mini-text .mt { font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--primary); }
+  .mini-text .mt { font-family: 'Nunito', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--primary); }
   .mini-text .ms { font-size: 0.72rem; color: var(--text-light); }
   .hero-mini-card2 .mt { color: var(--white) !important; }
   .hero-mini-card2 .ms { color: rgba(255,255,255,0.7) !important; }
@@ -271,7 +271,7 @@ const styles = `
     flex-wrap: wrap; justify-content: center;
   }
   .trust-label {
-    font-family: 'Syne', sans-serif; font-size: 0.75rem;
+    font-family: 'Nunito', sans-serif; font-size: 0.75rem;
     color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em;
     white-space: nowrap;
   }
@@ -279,7 +279,7 @@ const styles = `
     display: flex; gap: 36px; align-items: center; flex-wrap: wrap;
   }
   .trust-client {
-    font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700;
+    font-family: 'Nunito', sans-serif; font-size: 0.95rem; font-weight: 700;
     color: rgba(255,255,255,0.45); letter-spacing: 0.08em;
     text-transform: uppercase; white-space: nowrap;
     transition: color 0.2s;
@@ -288,7 +288,7 @@ const styles = `
 
   section { padding: 100px 5%; }
   .section-tag {
-    font-family: 'Syne', sans-serif; font-size: 0.75rem;
+    font-family: 'Nunito', sans-serif; font-size: 0.75rem;
     font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--teal-dark);
     display: inline-flex; align-items: center; gap: 8px;
@@ -299,7 +299,7 @@ const styles = `
     background: var(--teal-light); border-radius: 1px;
   }
   .section-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Nunito', sans-serif;
     font-size: clamp(2rem, 3.5vw, 2.8rem);
     font-weight: 700; color: var(--primary);
     line-height: 1.2; margin-bottom: 20px;
@@ -340,7 +340,7 @@ const styles = `
     width: 1px; background: rgba(255,255,255,0.12);
   }
   .stat-num {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: clamp(2.4rem, 4vw, 3.6rem); font-weight: 800;
     color: var(--teal-light); display: block; line-height: 1;
     margin-bottom: 8px;
@@ -377,7 +377,7 @@ const styles = `
   .service-card:hover .service-num { color: var(--white) !important; }
 
   .service-num {
-    font-family: 'Syne', sans-serif; font-size: 0.72rem;
+    font-family: 'Nunito', sans-serif; font-size: 0.72rem;
     font-weight: 700; letter-spacing: 0.1em; color: var(--teal-light);
     margin-bottom: 16px; display: block;
     transition: color 0.3s;
@@ -395,7 +395,7 @@ const styles = `
     stroke: var(--white);
   }
   .service-title {
-    font-family: 'Syne', sans-serif; font-size: 1.05rem;
+    font-family: 'Nunito', sans-serif; font-size: 1.05rem;
     font-weight: 700; color: var(--primary);
     margin-bottom: 10px; transition: color 0.3s;
   }
@@ -419,7 +419,7 @@ const styles = `
   }
   .about-img-content { position: relative; z-index: 1; }
   .about-img-content h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 1.8rem; color: var(--white);
     font-weight: 700; margin-bottom: 8px;
   }
@@ -432,7 +432,7 @@ const styles = `
     border: 1px solid var(--border);
   }
   .about-badge .badge-num {
-    font-family: 'Syne', sans-serif; font-size: 2rem;
+    font-family: 'Nunito', sans-serif; font-size: 2rem;
     font-weight: 800; color: var(--teal-dark); display: block;
   }
   .about-badge .badge-txt { font-size: 0.75rem; color: var(--text-light); }
@@ -457,7 +457,7 @@ const styles = `
     stroke: var(--teal-dark);
   }
   .about-feature-text h4 {
-    font-family: 'Syne', sans-serif; font-size: 0.95rem;
+    font-family: 'Nunito', sans-serif; font-size: 0.95rem;
     font-weight: 700; color: var(--primary); margin-bottom: 4px;
   }
   .about-feature-text p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
@@ -478,7 +478,7 @@ const styles = `
     background: var(--white); border: 3px solid var(--teal-light);
     display: flex; align-items: center; justify-content: center;
     margin: 0 auto 24px;
-    font-family: 'Syne', sans-serif; font-size: 1.2rem;
+    font-family: 'Nunito', sans-serif; font-size: 1.2rem;
     font-weight: 800; color: var(--teal-dark);
     position: relative; z-index: 1;
     box-shadow: 0 4px 16px rgba(78,205,196,0.25);
@@ -495,7 +495,7 @@ const styles = `
     stroke: var(--teal-dark);
   }
   .process-step h4 {
-    font-family: 'Syne', sans-serif; font-size: 0.95rem;
+    font-family: 'Nunito', sans-serif; font-size: 0.95rem;
     font-weight: 700; color: var(--primary); margin-bottom: 8px;
   }
   .process-step p { font-size: 0.82rem; color: var(--text-mid); line-height: 1.6; }
@@ -539,7 +539,7 @@ const styles = `
   .industry-card:hover .industry-icon { opacity: 0.7; }
   .industry-content { position: relative; z-index: 1; }
   .industry-content h3 {
-    font-family: 'Syne', sans-serif; font-size: 1.05rem;
+    font-family: 'Nunito', sans-serif; font-size: 1.05rem;
     font-weight: 700; color: var(--white); margin-bottom: 8px;
   }
   .industry-content p { font-size: 0.83rem; color: rgba(255,255,255,0.65); line-height: 1.6; }
@@ -550,7 +550,7 @@ const styles = `
   }
   .testimonials-section::before {
     content: '"'; position: absolute; top: -60px; left: 5%;
-    font-family: 'Playfair Display', serif; font-size: 28rem;
+    font-family: 'Nunito', sans-serif; font-size: 28rem;
     color: rgba(78,205,196,0.04); line-height: 1; pointer-events: none;
     z-index: 0;
   }
@@ -576,7 +576,7 @@ const styles = `
   }
   .testimonial-stars { color: var(--teal-light); font-size: 1rem; margin-bottom: 20px; letter-spacing: 2px; }
   .testimonial-text {
-    font-family: 'DM Sans', sans-serif; font-size: 0.95rem;
+    font-family: 'Nunito', sans-serif; font-size: 0.95rem;
     color: rgba(255,255,255,0.85); line-height: 1.75;
     font-style: italic; margin-bottom: 28px;
   }
@@ -585,11 +585,11 @@ const styles = `
     width: 46px; height: 46px; border-radius: 50%;
     background: linear-gradient(135deg, var(--teal-light), var(--teal-dark));
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Syne', sans-serif; font-size: 1rem;
+    font-family: 'Nunito', sans-serif; font-size: 1rem;
     font-weight: 700; color: var(--white); flex-shrink: 0;
   }
   .testimonial-author-info .name {
-    font-family: 'Syne', sans-serif; font-size: 0.9rem;
+    font-family: 'Nunito', sans-serif; font-size: 0.9rem;
     font-weight: 700; color: var(--white);
   }
   .testimonial-author-info .role { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
@@ -612,7 +612,7 @@ const styles = `
     width: 90px; height: 90px; border-radius: 50%;
     background: rgba(255,255,255,0.2); border: 3px solid rgba(255,255,255,0.4);
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Syne', sans-serif; font-size: 2rem;
+    font-family: 'Nunito', sans-serif; font-size: 2rem;
     font-weight: 700; color: var(--white);
   }
   .team-photo-overlay {
@@ -621,7 +621,7 @@ const styles = `
   }
   .team-info { padding: 24px; }
   .team-info h3 {
-    font-family: 'Syne', sans-serif; font-size: 1rem;
+    font-family: 'Nunito', sans-serif; font-size: 1rem;
     font-weight: 700; color: var(--primary); margin-bottom: 4px;
   }
   .team-info .role-tag {
@@ -665,7 +665,7 @@ const styles = `
   }
   .cta-text { position: relative; z-index: 1; }
   .cta-text h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Nunito', sans-serif;
     font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700;
     color: var(--white); margin-bottom: 16px; line-height: 1.2;
   }
@@ -674,7 +674,7 @@ const styles = `
   .btn-white {
     background: var(--white); color: var(--primary);
     padding: 14px 32px; border-radius: 10px;
-    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-family: 'Nunito', sans-serif; font-weight: 700;
     font-size: 0.9rem; letter-spacing: 0.04em;
     text-decoration: none; border: 2px solid var(--white);
     transition: all 0.25s; display: inline-block; text-align: center;
@@ -684,7 +684,7 @@ const styles = `
   .btn-ghost {
     background: transparent; color: rgba(255,255,255,0.8);
     padding: 14px 32px; border-radius: 10px;
-    font-family: 'Syne', sans-serif; font-weight: 600;
+    font-family: 'Nunito', sans-serif; font-weight: 600;
     font-size: 0.9rem; letter-spacing: 0.04em;
     text-decoration: none; border: 1.5px solid rgba(255,255,255,0.3);
     transition: all 0.25s; display: inline-block; text-align: center;
@@ -712,7 +712,7 @@ const styles = `
     stroke: var(--white);
   }
   .contact-item-text label {
-    font-family: 'Syne', sans-serif; font-size: 0.72rem;
+    font-family: 'Nunito', sans-serif; font-size: 0.72rem;
     font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
     color: var(--teal-dark); display: block; margin-bottom: 4px;
   }
@@ -723,21 +723,21 @@ const styles = `
     border-radius: 24px; padding: 48px;
   }
   .contact-form h3 {
-    font-family: 'Syne', sans-serif; font-size: 1.2rem;
+    font-family: 'Nunito', sans-serif; font-size: 1.2rem;
     font-weight: 700; color: var(--primary); margin-bottom: 32px;
   }
   .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .form-group { display: flex; flex-direction: column; gap: 8px; }
   .form-group.full { grid-column: 1 / -1; }
   .form-group label {
-    font-family: 'Syne', sans-serif; font-size: 0.78rem;
+    font-family: 'Nunito', sans-serif; font-size: 0.78rem;
     font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
     color: var(--text-mid);
   }
   .form-group input, .form-group select, .form-group textarea {
     background: var(--white); border: 1.5px solid var(--border);
     border-radius: 10px; padding: 13px 16px;
-    font-family: 'DM Sans', sans-serif; font-size: 0.92rem;
+    font-family: 'Nunito', sans-serif; font-size: 0.92rem;
     color: var(--text-dark); outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
     width: 100%; appearance: none;
@@ -751,7 +751,7 @@ const styles = `
     margin-top: 24px;
     background: var(--teal-dark); color: var(--white);
     padding: 14px 36px; border-radius: 10px;
-    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-family: 'Nunito', sans-serif; font-weight: 700;
     font-size: 0.9rem; letter-spacing: 0.04em;
     border: none; cursor: pointer;
     box-shadow: 0 4px 20px rgba(26,92,92,0.3);
@@ -784,7 +784,7 @@ const styles = `
   }
   .footer-social:hover { background: var(--teal-dark); border-color: var(--teal-dark); color: var(--white); }
   .footer-col h4 {
-    font-family: 'Syne', sans-serif; font-size: 0.8rem;
+    font-family: 'Nunito', sans-serif; font-size: 0.8rem;
     font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
     color: rgba(255,255,255,0.9); margin-bottom: 20px;
   }
@@ -800,14 +800,14 @@ const styles = `
     flex: 1; background: rgba(255,255,255,0.08);
     border: 1.5px solid rgba(255,255,255,0.15); border-right: none;
     color: var(--white); padding: 12px 16px;
-    font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+    font-family: 'Nunito', sans-serif; font-size: 0.88rem;
     outline: none; border-radius: 10px 0 0 10px;
   }
   .newsletter-form input::placeholder { color: rgba(255,255,255,0.3); }
   .newsletter-form button {
     background: var(--teal-dark); color: var(--white);
     border: none; padding: 12px 20px;
-    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-family: 'Nunito', sans-serif; font-weight: 700;
     font-size: 0.82rem; cursor: pointer;
     border-radius: 0 10px 10px 0;
     transition: background 0.2s;
@@ -837,7 +837,7 @@ const styles = `
   }
   .mobile-menu.open { display: flex; }
   .mobile-menu a {
-    font-family: 'Syne', sans-serif; font-size: 1.4rem;
+    font-family: 'Nunito', sans-serif; font-size: 1.4rem;
     font-weight: 700; color: var(--primary); text-decoration: none;
     transition: color 0.2s;
   }
@@ -1189,7 +1189,7 @@ export default function Home2() {
 
   return (
     <>
-      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+      <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet"/>
       <style>{styles}</style>
       <Header />
       <section className="hero" id="home">
