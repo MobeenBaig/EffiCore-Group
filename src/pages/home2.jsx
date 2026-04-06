@@ -1241,12 +1241,11 @@ export default function Home2() {
       </section>
 
       {/* TRUST BAR */}
-      <div className="trust-bar">
-        <span className="trust-label">We Cover all insurances</span>
-        <div className="trust-clients" style={{display: 'flex', flexDirection: 'column', gap: 6}}>
-          <span className="trust-client">Top insurers</span>
-          <span className="trust-client">All major payers & plans</span>
-          <span className="trust-client">Local and specialty insurers — including Medicaid and Medicare</span>
+      <div className="trust-bar" style={{padding: '18px 5%'}}>
+        <div className="trust-label" style={{display: 'flex', flexDirection: 'column', gap: 6, fontSize: '1rem', fontWeight: 700, color: 'var(--white)'}}>
+          <span>We Cover</span>
+          <span>all insurances</span>
+          <span>including</span>
         </div>
       </div>
 
