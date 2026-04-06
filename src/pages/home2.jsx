@@ -1216,26 +1216,18 @@ export default function Home2() {
         <div className="hero-visual">
           <div className="hero-card-stack">
             <div className="hero-main-card">
-              <div className="hero-card-header">
+              <div className="hero-card-header" style={{alignItems: 'flex-start'}}>
                 <div className="hero-card-icon"><TrendingUp size={24} color="white" /></div>
-                <div>
-                  <h3>100% HIPPA Compliant</h3>
-                  <h2 >Our mission</h2>
-                  <p>“Tailored to maximize revenue for medical and dental practices while streamlining daily operations for seamless efficiency.”</p>
-                </div>
-              </div>
-              <div className="metric-row">
-                <div className="metric-item">
-                  <span className="val">94%</span>
-                  <span className="lbl">Efficiency Rate</span>
-                </div>
-                <div className="metric-item">
-                  <span className="val">32%</span>
-                  <span className="lbl">Cost Savings</span>
-                </div>
-                <div className="metric-item">
-                  <span className="val">18×</span>
-                  <span className="lbl">ROI Multiple</span>
+                <div style={{
+                  background: 'rgba(255,255,255,0.9)',
+                  padding: '12px 16px',
+                  borderRadius: 10,
+                  color: 'var(--text-dark)',
+                  maxWidth: '420px'
+                }}>
+                  <h3 style={{margin: 0, fontSize: '0.95rem', fontWeight: 700}}>100% HIPPA Compliant</h3>
+                  <h2 style={{margin: '6px 0 8px', fontSize: '1.25rem', fontWeight: 800}}>Our mission</h2>
+                  <p style={{margin: 0, fontSize: '0.95rem', color: 'var(--text-dark)'}}>“Tailored to maximize revenue for medical and dental practices while streamlining daily operations for seamless efficiency.”</p>
                 </div>
               </div>
             </div>
