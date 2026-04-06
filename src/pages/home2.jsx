@@ -1241,11 +1241,19 @@ export default function Home2() {
       </section>
 
       {/* TRUST BAR */}
-      <div className="trust-bar" style={{padding: '18px 5%'}}>
+      <div className="trust-bar" style={{padding: '18px 5%', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
         <div className="trust-label" style={{display: 'flex', flexDirection: 'column', gap: 6, fontSize: '1rem', fontWeight: 700, color: 'var(--white)'}}>
           <span>We Cover</span>
           <span>all insurances</span>
           <span>including</span>
+        </div>
+        <div className="trust-clients" style={{display: 'flex', flexDirection: 'column', gap: 6, alignItems: 'flex-end'}}>
+          <span className="trust-client" style={{color: 'var(--white)', fontWeight: 700}}>HealthFirst</span>
+          <span className="trust-client" style={{color: 'var(--white)', fontWeight: 700}}>Fidelis</span>
+          <span className="trust-client" style={{color: 'var(--white)', fontWeight: 700}}>Delta Dental</span>
+          <span className="trust-client" style={{color: 'var(--white)', fontWeight: 700}}>UHC</span>
+          <span className="trust-client" style={{color: 'var(--white)', fontWeight: 700}}>Humana</span>
+          <span className="trust-client" style={{color: 'var(--white)', fontWeight: 700}}>Cigna</span>
         </div>
       </div>
 
