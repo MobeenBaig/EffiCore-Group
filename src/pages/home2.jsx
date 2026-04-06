@@ -203,10 +203,10 @@ const styles = `
     position: relative; width: 100%; max-width: 460px; margin: 0 auto;
   }
   .hero-main-card {
-    background: var(--white);
+    background: transparent;
     border-radius: 24px; padding: 40px;
-    box-shadow: var(--shadow-lg);
-    border: 1px solid var(--border);
+    box-shadow: none;
+    border: none;
   }
   .hero-card-header {
     display: flex; align-items: center; gap: 16px; margin-bottom: 28px;
@@ -1209,7 +1209,7 @@ export default function Home2() {
         </div>
 
         <div className="hero-visual" style={{
-          backgroundImage: `linear-gradient(to right, rgba(255,255,255,0.98) 60%, rgba(255,255,255,0) 100%), url(${meetingImg})`,
+          backgroundImage: `url(${meetingImg})`,
           backgroundPosition: 'right center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
