@@ -210,14 +210,6 @@ const styles = `
   .hero-card-header {
     display: flex; align-items: center; gap: 16px; margin-bottom: 28px;
   }
-  .hero-card-icon {
-    width: 56px; height: 56px; border-radius: 16px;
-    background: linear-gradient(135deg, var(--teal-dark), var(--teal-light));
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem;
-    color: var(--white);
-    flex-shrink: 0;
-  }
   .hero-card-icon svg {
     color: var(--white);
     stroke: var(--white);
@@ -1217,7 +1209,6 @@ export default function Home2() {
           <div className="hero-card-stack">
             <div className="hero-main-card">
               <div className="hero-card-header" style={{alignItems: 'flex-start'}}>
-                <div className="hero-card-icon"><TrendingUp size={24} color="white" /></div>
                 <div style={{
                   background: 'rgba(255,255,255,0.9)',
                   padding: '12px 16px',
