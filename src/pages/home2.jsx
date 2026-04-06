@@ -1242,14 +1242,11 @@ export default function Home2() {
 
       {/* TRUST BAR */}
       <div className="trust-bar">
-        <span className="trust-label">Trusted by</span>
-        <div className="trust-clients">
-          <span className="trust-client">Nexus Corp</span>
-          <span className="trust-client">Vantara Global</span>
-          <span className="trust-client">Meridian Tech</span>
-          <span className="trust-client">Pinnacle Group</span>
-          <span className="trust-client">Orion Ventures</span>
-          <span className="trust-client">Stratex Partners</span>
+        <span className="trust-label">We Cover all insurances</span>
+        <div className="trust-clients" style={{display: 'flex', flexDirection: 'column', gap: 6}}>
+          <span className="trust-client">Top insurers</span>
+          <span className="trust-client">All major payers & plans</span>
+          <span className="trust-client">Local and specialty insurers — including Medicaid and Medicare</span>
         </div>
       </div>
 
