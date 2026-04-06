@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { TrendingUp, Target, CheckCircle, Settings, Hammer, BarChart3, Lightbulb, Search, Handshake, Map, PenTool, Rocket, Factory, Building2, Hospital, Package, Zap, Laptop, Beaker, Globe, MapPin, Phone, Mail, Clock, Menu, X } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import meetingImg from '../assets/meeting.jpg';
 
 const styles = `
   :root {
@@ -1209,7 +1210,9 @@ export default function Home2() {
 
         <div className="hero-visual">
           <div className="hero-card-stack">
-            <div className="hero-main-card">
+            <div className="hero-main-card" style={{
+              background: `linear-gradient(90deg, rgba(255,255,255,0.98) 55%, rgba(255,255,255,0.65) 100%), url(${meetingImg}) right center / cover no-repeat`
+            }}>
               <div className="hero-card-header">
                 <div className="hero-card-icon"><TrendingUp size={24} color="white" /></div>
                 <div>
