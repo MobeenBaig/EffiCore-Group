@@ -237,7 +237,7 @@ const styles = `
   .metric-item .lbl { font-size: 0.72rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
 
   .hero-mini-card {
-    position: absolute; bottom: -20px; left: -30px;
+    position: absolute; bottom: 12px; left: -20px;
 
     background: var(--white); border-radius: 16px;
     padding: 16px 20px; box-shadow: var(--shadow);
