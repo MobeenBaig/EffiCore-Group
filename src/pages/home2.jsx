@@ -132,7 +132,6 @@ const styles = `
   .hero-bg-shape {
     position: absolute; right: -10%; top: -15%;
     width: 70%; height: 130%;
-    background: linear-gradient(160deg, #1A5C5C 0%, #2A7A72 45%, #4ECDC4 100%);
     border-radius: 40% 0 0 30%;
     opacity: 0.08;
     z-index: 0;
@@ -1195,7 +1194,13 @@ export default function Home2() {
       <Header />
       <section className="hero" id="home">
         <div className="hero-bg"></div>
-        <div className="hero-bg-shape"></div>
+        <div className="hero-bg-shape" style={{
+          backgroundImage: `url(${meetingImg})`,
+          backgroundPosition: 'right center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          opacity: 1
+        }}></div>
         <div className="hero-bg-dots"></div>
 
         <div className="hero-content">
