@@ -9,29 +9,25 @@ import questionIcon from '../assets/questionicon.png';
 import meetingImg from '../assets/meeting.jpg';
 
 const steps = [
-  {
-    title: 'EMR Setup',
-    desc: 'Streamline your practice with a fully customized and user-friendly Electronic Medical Records system.',
+ {
+    title: 'Online Profile Maintenance',
+    desc: 'Keep your provider profiles up-to-date across all platforms for seamless operations.',
   },
   {
-    title: 'Billing Setup',
-    desc: 'Ensure accurate, efficient, and compliant billing processes from day one.',
+    title: 'Credentialing & Provider Tracking',
+    desc: 'Ensure timely credentialing and continuous tracking for all providers with every payer.',
   },
   {
-    title: 'Clearinghouse Setup',
-    desc: 'Connect seamlessly with payers for faster, error-free claim submissions.',
+    title: 'Certification & License Expiry Reminders',
+    desc: 'Stay compliant with automated reminders for upcoming license and certification renewals.',
   },
   {
-    title: 'Coding and Posting',
-    desc: 'Accurate coding and timely posting to maximize reimbursements and minimize denials.',
+    title: 'Payer Enrollment ERA/EFT/Submission' ,
+    desc: 'Simplify payer enrollment for electronic remittance, payments, and claims submissions.',
   },
   {
-    title: 'AR Management',
-    desc: 'Proactive accounts receivable management to accelerate collections and improve cash flow.',
-  },
-  {
-    title: 'Billing Reports',
-    desc: 'Clear, detailed, and actionable billing reports for full financial visibility and informed decision-making.',
+    title: 'Contract Management',
+    desc: 'Efficiently manage, review, and track all payer contracts to optimize terms and reimbursements.',
   },
 ];
 
@@ -51,7 +47,7 @@ const allServices = [
   'Practice Operations Audit'
 ];
 
-export default function MedicalBilling() {
+export default function Credentialing() {
   const location = useLocation();
   const serviceRoutes = {
     'Medical Billing & Coding': '/medical-billing',
@@ -113,9 +109,9 @@ export default function MedicalBilling() {
             zIndex: 0
           }} />
           <div className="container" style={{position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%'}}>
-            <h1 className="section-title" style={{fontSize: 'clamp(2rem, 6vw, 4.5rem)', fontWeight: '800', marginBottom: 12, color: 'white', animation: 'fadeUp 0.7s 0.1s ease both'}}>Medical Billing & Coding</h1>
+            <h1 className="section-title" style={{fontSize: 'clamp(2rem, 6vw, 4.5rem)', fontWeight: '800', marginBottom: 12, color: 'white', animation: 'fadeUp 0.7s 0.1s ease both'}}>Credentialing</h1>
             <div className="section-tag" style={{marginBottom: 18, color: '#4ECDC4', fontSize: 'clamp(1rem, 3.2vw, 1.25rem)', animation: 'fadeUp 0.7s 0s ease both'}}>
-              <Link to="/" style={{color: 'inherit', textDecoration: 'none', cursor: 'pointer', transition: 'opacity 0.2s'}}>Home</Link> &gt; Medical Billing
+              <Link to="/" style={{color: 'inherit', textDecoration: 'none', cursor: 'pointer', transition: 'opacity 0.2s'}}>Home</Link> &gt; Credentialing
             </div>
             <p style={{fontSize: 'clamp(0.95rem, 3vw, 1.2rem)', color: 'rgba(255,255,255,0.8)', fontWeight: 600, marginBottom: 0, animation: 'fadeUp 0.7s 0.2s ease both'}}>
               Leave the Billing to Us — Focus on Saving Lives!
@@ -146,20 +142,20 @@ export default function MedicalBilling() {
               paddingLeft: '70px',
               
             }}>
-              <h2 className="section-title" style={{fontSize: 'clamp(1.5rem, 4vw, 2rem)', fontWeight: 800, color: 'var(--teal-dark)', marginBottom: 18}}>Medical Billing</h2>
+              <h2 className="section-title" style={{fontSize: 'clamp(1.5rem, 4vw, 2rem)', fontWeight: 800, color: 'var(--teal-dark)', marginBottom: 18}}>Dental Billing</h2>
               <p style={{fontSize: 'clamp(0.95rem, 3vw, 1.08rem)', color: 'var(--text-mid)', lineHeight: 1.7, marginBottom: 0}}>
-Medical billing can often feel overwhelming—complex processes, constant regulatory updates, and 
-time-consuming administrative work can take focus away from patient care. Our billing services are 
-designed to simplify this entire process, helping you operate more eAiciently while improving your 
-practice’s financial performance. 
-By partnering with us, you benefit from a strategic approach focused on maximizing 
-reimbursements and accelerating payment cycles. Our experienced team, combined with 
-advanced analytics, ensures accuracy, compliance, and consistent follow-through—so you get 
-paid what you deserve, without delays. 
-We take pride in delivering strong collection performance tailored to the unique needs of your 
-practice. With real-time, transparent reporting, you’ll always have clear visibility into your revenue, 
-performance trends, and growth opportunities—empowering you to make informed decisions with 
-confidence.              </p>
+Medical credentialing is a critical process used to assess a provider’s qualifications, experience, 
+and professional history to ensure competency and compliance. It involves a thorough review of 
+education, training, residency, licenses, and board certifications within the provider’s specialty. 
+Hospitals, insurance companies, Medicare, and Medicaid rely on credentialing to determine 
+whether a physician meets their standards before allowing participation in their networks. This 
+process is not one-time—it requires ongoing monitoring and periodic revalidation in accordance 
+with state regulations, accrediting bodies, and payer requirements. 
+Managing credentialing in-house can be complex, time-intensive, and prone to delays. At HQ 
+Analytics, we take this burden oA your shoulders by handling the entire credentialing process with 
+accuracy and eAiciency. From initial enrollment to ongoing follow-ups with carriers, we ensure 
+everything is completed correctly and on time. You’ll also receive regular updates, giving you full 
+visibility into the progress at every stage.              </p>
             </div>
 
             {/* Right section - blob with meeting background image */}
@@ -167,7 +163,7 @@ confidence.              </p>
               position: 'relative',
               width: '100%',
               minHeight: '100vh',
-              borderRadius: '40% 0 0 30%',
+              borderRadius: '15% 0 0 20%',
               backgroundImage: `url(${meetingImg})`,
               backgroundPosition: 'center',
               backgroundSize: 'cover',
@@ -259,6 +255,7 @@ confidence.              </p>
                               textAlign: 'left',
                             };
                           })()}
+
                           onMouseEnter={(e) => {
                             e.currentTarget.style.background = '#90EE90';
                             e.currentTarget.style.paddingLeft = '24px';
@@ -357,7 +354,7 @@ confidence.              </p>
               minWidth: 0,
             }}>
               <div className="section-header" style={{marginBottom: 64, position: 'relative', zIndex: 1}}>
-                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>Our core billing services include, but are not limited to </div>
+                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>Key Features</div>
               </div>
               <div className="billing-steps" style={{
                 display: 'flex',
@@ -415,7 +412,7 @@ confidence.              </p>
             {/* Cards Section - First on mobile */}
             <div>
               <div className="section-header" style={{marginBottom: 40, position: 'relative', zIndex: 1}}>
-                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>Our core billing services include, but are not limited to</div>
+                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>Key Features</div>
               </div>
               <div style={{
                 display: 'flex',
@@ -493,31 +490,30 @@ confidence.              </p>
                         padding: '0',
                       }}>
                         <Link 
-                          to={getServiceRoute(service)}
-                          style={(() => {
-                            const route = getServiceRoute(service);
-                            const isActive = location.pathname === route;
-                            return {
-                              display: 'block',
-                              padding: '12px 16px',
-                              color: 'white',
-                              textDecoration: 'none',
-                              fontSize: '16px',
-                              fontWeight: 600,
-                              transition: 'all 0.2s ease',
-                              background: isActive ? '#90EE90' : 'transparent',
-                              borderLeft: isActive ? '3px solid #ffd700' : '3px solid transparent',
-                              textAlign: 'left',
-                            };
-                          })()}
+                          to={service === 'Dental Billing & Coding' ? '/dental-billing' : service === 'Medical Billing & Coding' ? '/medical-billing' : service === 'Credentialing' ? '/credentialing' : `/services/${service.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')}`}
+                          style={{
+                            display: 'block',
+                            padding: '12px 16px',
+                            color: 'white',
+                            textDecoration: 'none',
+                            fontSize: '16px',
+                            fontWeight: 600,
+                            transition: 'all 0.2s ease',
+                            background: service === 'Dental Billing & Coding' ? '#90EE90' : 'transparent',
+                            borderLeft: service === 'Dental Billing & Coding' ? '3px solid #ffd700' : '3px solid transparent',
+                            textAlign: 'left',
+                          }}
+
                           onMouseEnter={(e) => {
                             e.currentTarget.style.background = '#90EE90';
                             e.currentTarget.style.paddingLeft = '20px';
                           }}
                           onMouseLeave={(e) => {
-                            const route = getServiceRoute(service);
-                            const isActive = location.pathname === route;
-                            e.currentTarget.style.background = isActive ? '#90EE90' : 'transparent';
+                            if (service !== 'Medical Billing & Coding') {
+                              e.currentTarget.style.background = 'transparent';
+                            } else {
+                              e.currentTarget.style.background = '#90EE90';
+                            }
                             e.currentTarget.style.paddingLeft = '16px';
                           }}
                         >

@@ -10,28 +10,16 @@ import meetingImg from '../assets/meeting.jpg';
 
 const steps = [
   {
-    title: 'EMR Setup',
-    desc: 'Streamline your practice with a fully customized and user-friendly Electronic Medical Records system.',
+    title: 'HEDIS',
+    desc: 'Improve quality scores and compliance with accurate HEDIS data collection and reporting.',
   },
   {
-    title: 'Billing Setup',
-    desc: 'Ensure accurate, efficient, and compliant billing processes from day one.',
+    title: 'PCMH (Patient-Centered Medical Home)',
+    desc: 'Streamline care coordination and achieve recognition with expert PCMH support.',
   },
   {
-    title: 'Clearinghouse Setup',
-    desc: 'Connect seamlessly with payers for faster, error-free claim submissions.',
-  },
-  {
-    title: 'Coding and Posting',
-    desc: 'Accurate coding and timely posting to maximize reimbursements and minimize denials.',
-  },
-  {
-    title: 'AR Management',
-    desc: 'Proactive accounts receivable management to accelerate collections and improve cash flow.',
-  },
-  {
-    title: 'Billing Reports',
-    desc: 'Clear, detailed, and actionable billing reports for full financial visibility and informed decision-making.',
+    title: 'CCM (Chronic Care Management)',
+    desc: 'Enhance patient outcomes and revenue with proactive chronic care management services.',
   },
 ];
 
@@ -51,7 +39,7 @@ const allServices = [
   'Practice Operations Audit'
 ];
 
-export default function MedicalBilling() {
+export default function PracticeDevelopment() {
   const location = useLocation();
   const serviceRoutes = {
     'Medical Billing & Coding': '/medical-billing',
@@ -113,9 +101,9 @@ export default function MedicalBilling() {
             zIndex: 0
           }} />
           <div className="container" style={{position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%'}}>
-            <h1 className="section-title" style={{fontSize: 'clamp(2rem, 6vw, 4.5rem)', fontWeight: '800', marginBottom: 12, color: 'white', animation: 'fadeUp 0.7s 0.1s ease both'}}>Medical Billing & Coding</h1>
+            <h1 className="section-title" style={{fontSize: 'clamp(2rem, 6vw, 4.5rem)', fontWeight: '800', marginBottom: 12, color: 'white', animation: 'fadeUp 0.7s 0.1s ease both'}}>Practice Development</h1>
             <div className="section-tag" style={{marginBottom: 18, color: '#4ECDC4', fontSize: 'clamp(1rem, 3.2vw, 1.25rem)', animation: 'fadeUp 0.7s 0s ease both'}}>
-              <Link to="/" style={{color: 'inherit', textDecoration: 'none', cursor: 'pointer', transition: 'opacity 0.2s'}}>Home</Link> &gt; Medical Billing
+              <Link to="/" style={{color: 'inherit', textDecoration: 'none', cursor: 'pointer', transition: 'opacity 0.2s'}}>Home</Link> &gt; Practice Development
             </div>
             <p style={{fontSize: 'clamp(0.95rem, 3vw, 1.2rem)', color: 'rgba(255,255,255,0.8)', fontWeight: 600, marginBottom: 0, animation: 'fadeUp 0.7s 0.2s ease both'}}>
               Leave the Billing to Us — Focus on Saving Lives!
@@ -146,20 +134,11 @@ export default function MedicalBilling() {
               paddingLeft: '70px',
               
             }}>
-              <h2 className="section-title" style={{fontSize: 'clamp(1.5rem, 4vw, 2rem)', fontWeight: 800, color: 'var(--teal-dark)', marginBottom: 18}}>Medical Billing</h2>
+              <h2 className="section-title" style={{fontSize: 'clamp(1.5rem, 4vw, 2rem)', fontWeight: 800, color: 'var(--teal-dark)', marginBottom: 18}}>Practice Development</h2>
               <p style={{fontSize: 'clamp(0.95rem, 3vw, 1.08rem)', color: 'var(--text-mid)', lineHeight: 1.7, marginBottom: 0}}>
-Medical billing can often feel overwhelming—complex processes, constant regulatory updates, and 
-time-consuming administrative work can take focus away from patient care. Our billing services are 
-designed to simplify this entire process, helping you operate more eAiciently while improving your 
-practice’s financial performance. 
-By partnering with us, you benefit from a strategic approach focused on maximizing 
-reimbursements and accelerating payment cycles. Our experienced team, combined with 
-advanced analytics, ensures accuracy, compliance, and consistent follow-through—so you get 
-paid what you deserve, without delays. 
-We take pride in delivering strong collection performance tailored to the unique needs of your 
-practice. With real-time, transparent reporting, you’ll always have clear visibility into your revenue, 
-performance trends, and growth opportunities—empowering you to make informed decisions with 
-confidence.              </p>
+Growing a successful healthcare practice requires more than excellent patient care—it demands strategic planning, efficient operations, and a strong focus on revenue optimization. Many practices face challenges such as underutilized opportunities, inconsistent patient flow, and operational inefficiencies that limit their growth. Our practice development services identify these gaps and implement tailored strategies to drive sustainable success. We take a comprehensive approach by analyzing your workflows, patient acquisition channels, and financial performance, ensuring every aspect of your practice is aligned for maximum efficiency and growth.
+
+From improving front-desk operations and optimizing scheduling to enhancing billing processes and increasing patient retention, we create a streamlined, patient-centered system that boosts both productivity and profitability. With ongoing support and performance tracking, we provide clear insights into progress and areas for improvement. Our data-driven approach ensures every decision is backed by measurable results, helping you scale confidently in a competitive healthcare landscape.          </p>
             </div>
 
             {/* Right section - blob with meeting background image */}
@@ -167,7 +146,7 @@ confidence.              </p>
               position: 'relative',
               width: '100%',
               minHeight: '100vh',
-              borderRadius: '40% 0 0 30%',
+              borderRadius: '15% 0 0 20%',
               backgroundImage: `url(${meetingImg})`,
               backgroundPosition: 'center',
               backgroundSize: 'cover',
@@ -259,6 +238,7 @@ confidence.              </p>
                               textAlign: 'left',
                             };
                           })()}
+
                           onMouseEnter={(e) => {
                             e.currentTarget.style.background = '#90EE90';
                             e.currentTarget.style.paddingLeft = '24px';
@@ -357,7 +337,8 @@ confidence.              </p>
               minWidth: 0,
             }}>
               <div className="section-header" style={{marginBottom: 64, position: 'relative', zIndex: 1}}>
-                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>Our core billing services include, but are not limited to </div>
+                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>We cover HEDIS, PCMH and CCM (Chronic Care management) as part of practice development. 
+</div>
               </div>
               <div className="billing-steps" style={{
                 display: 'flex',
@@ -415,7 +396,8 @@ confidence.              </p>
             {/* Cards Section - First on mobile */}
             <div>
               <div className="section-header" style={{marginBottom: 40, position: 'relative', zIndex: 1}}>
-                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>Our core billing services include, but are not limited to</div>
+                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>We cover HEDIS, PCMH and CCM (Chronic Care management) as part of practice development. 
+</div>
               </div>
               <div style={{
                 display: 'flex',
@@ -510,6 +492,7 @@ confidence.              </p>
                               textAlign: 'left',
                             };
                           })()}
+
                           onMouseEnter={(e) => {
                             e.currentTarget.style.background = '#90EE90';
                             e.currentTarget.style.paddingLeft = '20px';

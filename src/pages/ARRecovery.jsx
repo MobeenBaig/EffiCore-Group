@@ -10,28 +10,28 @@ import meetingImg from '../assets/meeting.jpg';
 
 const steps = [
   {
-    title: 'EMR Setup',
-    desc: 'Streamline your practice with a fully customized and user-friendly Electronic Medical Records system.',
+    title: 'Aged A/R Analysis',
+    desc: 'We analyze outstanding accounts receivable to identify aging claims and prioritize recovery efforts for maximum impact.',
   },
   {
-    title: 'Billing Setup',
-    desc: 'Ensure accurate, efficient, and compliant billing processes from day one.',
+    title: 'Claim Follow-up & Resolution',
+    desc: 'Our team actively follows up on unpaid and underpaid claims, communicating directly with payers to resolve issues swiftly.',
   },
   {
-    title: 'Clearinghouse Setup',
-    desc: 'Connect seamlessly with payers for faster, error-free claim submissions.',
+    title: 'Denial Investigation & Appeals',
+    desc: 'Denied or underpaid claims are thoroughly investigated and appealed to secure the reimbursement your practice deserves.',
   },
   {
-    title: 'Coding and Posting',
-    desc: 'Accurate coding and timely posting to maximize reimbursements and minimize denials.',
+    title: 'Payment Posting & Reconciliation',
+    desc: 'We manage all incoming payments, adjustments, and denials while reconciling them with provider claims for accurate revenue posting.',
   },
   {
-    title: 'AR Management',
-    desc: 'Proactive accounts receivable management to accelerate collections and improve cash flow.',
+    title: 'Collection Strategy Optimization',
+    desc: 'We enhance collection workflows through claim validation and strategic recovery efforts from both payers and patients.',
   },
   {
-    title: 'Billing Reports',
-    desc: 'Clear, detailed, and actionable billing reports for full financial visibility and informed decision-making.',
+    title: 'A/R Reporting & Analytics',
+    desc: 'We provide detailed aging reports, recovery metrics, and actionable insights to improve financial performance.',
   },
 ];
 
@@ -51,7 +51,7 @@ const allServices = [
   'Practice Operations Audit'
 ];
 
-export default function MedicalBilling() {
+export default function ARRecovery() {
   const location = useLocation();
   const serviceRoutes = {
     'Medical Billing & Coding': '/medical-billing',
@@ -113,9 +113,9 @@ export default function MedicalBilling() {
             zIndex: 0
           }} />
           <div className="container" style={{position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%'}}>
-            <h1 className="section-title" style={{fontSize: 'clamp(2rem, 6vw, 4.5rem)', fontWeight: '800', marginBottom: 12, color: 'white', animation: 'fadeUp 0.7s 0.1s ease both'}}>Medical Billing & Coding</h1>
+            <h1 className="section-title" style={{fontSize: 'clamp(2rem, 6vw, 4.5rem)', fontWeight: '800', marginBottom: 12, color: 'white', animation: 'fadeUp 0.7s 0.1s ease both'}}>AR Recovery</h1>
             <div className="section-tag" style={{marginBottom: 18, color: '#4ECDC4', fontSize: 'clamp(1rem, 3.2vw, 1.25rem)', animation: 'fadeUp 0.7s 0s ease both'}}>
-              <Link to="/" style={{color: 'inherit', textDecoration: 'none', cursor: 'pointer', transition: 'opacity 0.2s'}}>Home</Link> &gt; Medical Billing
+              <Link to="/" style={{color: 'inherit', textDecoration: 'none', cursor: 'pointer', transition: 'opacity 0.2s'}}>Home</Link> &gt; AR Recovery
             </div>
             <p style={{fontSize: 'clamp(0.95rem, 3vw, 1.2rem)', color: 'rgba(255,255,255,0.8)', fontWeight: 600, marginBottom: 0, animation: 'fadeUp 0.7s 0.2s ease both'}}>
               Leave the Billing to Us — Focus on Saving Lives!
@@ -146,20 +146,22 @@ export default function MedicalBilling() {
               paddingLeft: '70px',
               
             }}>
-              <h2 className="section-title" style={{fontSize: 'clamp(1.5rem, 4vw, 2rem)', fontWeight: 800, color: 'var(--teal-dark)', marginBottom: 18}}>Medical Billing</h2>
+              <h2 className="section-title" style={{fontSize: 'clamp(1.5rem, 4vw, 2rem)', fontWeight: 800, color: 'var(--teal-dark)', marginBottom: 18}}>Dental Billing</h2>
               <p style={{fontSize: 'clamp(0.95rem, 3vw, 1.08rem)', color: 'var(--text-mid)', lineHeight: 1.7, marginBottom: 0}}>
-Medical billing can often feel overwhelming—complex processes, constant regulatory updates, and 
-time-consuming administrative work can take focus away from patient care. Our billing services are 
-designed to simplify this entire process, helping you operate more eAiciently while improving your 
-practice’s financial performance. 
-By partnering with us, you benefit from a strategic approach focused on maximizing 
-reimbursements and accelerating payment cycles. Our experienced team, combined with 
-advanced analytics, ensures accuracy, compliance, and consistent follow-through—so you get 
-paid what you deserve, without delays. 
-We take pride in delivering strong collection performance tailored to the unique needs of your 
-practice. With real-time, transparent reporting, you’ll always have clear visibility into your revenue, 
-performance trends, and growth opportunities—empowering you to make informed decisions with 
-confidence.              </p>
+EAective Accounts Receivable (A/R) management is essential for maintaining a healthy cash flow 
+and ensuring the financial stability of your practice. Unpaid or delayed claims can quickly 
+accumulate, impacting your revenue cycle and overall performance. Our A/R management services 
+are designed to identify bottlenecks, reduce outstanding balances, and accelerate 
+reimbursements—helping you maintain consistent cash flow without added stress. 
+Our team takes a proactive approach by closely monitoring aging reports, prioritizing high-value 
+claims, and conducting timely follow-ups with insurance companies. We focus on resolving 
+denials, reprocessing claims, and addressing payment discrepancies with precision and 
+persistence. By combining industry expertise with data-driven insights, we ensure that no revenue 
+opportunity is overlooked. 
+With our transparent reporting and regular performance updates, you gain full visibility into your 
+receivables and collection trends. We keep you informed at every stage, empowering you to make 
+strategic decisions for your practice’s growth. While we handle the complexities of A/R 
+management, you can stay focused on delivering quality patient care with confidence.               </p>
             </div>
 
             {/* Right section - blob with meeting background image */}
@@ -167,7 +169,7 @@ confidence.              </p>
               position: 'relative',
               width: '100%',
               minHeight: '100vh',
-              borderRadius: '40% 0 0 30%',
+              borderRadius: '15% 0 0 20%',
               backgroundImage: `url(${meetingImg})`,
               backgroundPosition: 'center',
               backgroundSize: 'cover',
@@ -259,6 +261,7 @@ confidence.              </p>
                               textAlign: 'left',
                             };
                           })()}
+
                           onMouseEnter={(e) => {
                             e.currentTarget.style.background = '#90EE90';
                             e.currentTarget.style.paddingLeft = '24px';
@@ -357,7 +360,7 @@ confidence.              </p>
               minWidth: 0,
             }}>
               <div className="section-header" style={{marginBottom: 64, position: 'relative', zIndex: 1}}>
-                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>Our core billing services include, but are not limited to </div>
+                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>Our Methodology To AR</div>
               </div>
               <div className="billing-steps" style={{
                 display: 'flex',
@@ -415,7 +418,7 @@ confidence.              </p>
             {/* Cards Section - First on mobile */}
             <div>
               <div className="section-header" style={{marginBottom: 40, position: 'relative', zIndex: 1}}>
-                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>Our core billing services include, but are not limited to</div>
+                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>Our Methodology To AR</div>
               </div>
               <div style={{
                 display: 'flex',
@@ -510,6 +513,7 @@ confidence.              </p>
                               textAlign: 'left',
                             };
                           })()}
+
                           onMouseEnter={(e) => {
                             e.currentTarget.style.background = '#90EE90';
                             e.currentTarget.style.paddingLeft = '20px';

@@ -1,24 +1,25 @@
 import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logoTrimmed from '../assets/companylogo.png';
 
 const servicesList = [
   { label: 'Medical Billing & Coding', href: '/medical-billing' },
-  { label: 'Dental Billing & Coding', href: '#dental-billing' },
-  { label: 'Credentialing', href: '#credentialing' },
-  { label: 'AR Recovery', href: '#ar-recovery' },
+  { label: 'Dental Billing & Coding', href: '/dental-billing' },
+  { label: 'Credentialing', href: '/credentialing' },
+  { label: 'AR Recovery', href: '/ar-recovery' },
   {
     label: 'Practice Development',
+    href: '/practice-development',
     submenu: [
-      { label: 'HEDIS', href: '#hedis' },
-      { label: 'PCMH', href: '#pcmh' },
-      { label: 'CCM', href: '#ccm' },
+      { label: 'HEDIS', href: '/hedis' },
+      { label: 'PCMH', href: '/pcmh' },
+      { label: 'CCM', href: '/ccm' },
     ],
   },
-  { label: 'Patient Scheduling', href: '#scheduling' },
-  { label: 'Document Management', href: '#doc-mgmt' },
-  { label: 'Practice Operations Audit', href: '#audit' },
+  { label: 'Patient Scheduling', href: '/patient-scheduling' },
+  { label: 'Document Management', href: '/document-management' },
+  { label: 'Practice Operations Audit', href: '/practice-operations-audit' },
 ];
 
 export default function Header() {
@@ -27,6 +28,7 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const navbarRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,25 +67,48 @@ export default function Header() {
             onMouseEnter={() => setSubmenuOpen(true)}
             onMouseLeave={() => setSubmenuOpen(false)}
           >
-            <a
-              href="#practice-development"
+            <Link
+              to={item.href}
               className="dropdown-link"
               style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}
-              onClick={e => e.preventDefault()}
+              onClick={() => setMobileOpen(false)}
             >
               {item.label} <ChevronRight size={14} style={{marginLeft: 4}} />
-            </a>
+            </Link>
             {submenuOpen && (
               <ul className="submenu">
                 {item.submenu.map((sub, i) => (
-                  <li key={sub.label}><a href={sub.href}>{sub.label}</a></li>
+                  <li key={sub.label}>
+                    {sub.href.startsWith('/') ? (
+                      <Link to={sub.href} className="dropdown-link" onClick={() => setMobileOpen(false)}>
+                        {sub.label}
+                      </Link>
+                    ) : (
+                      <a href={sub.href}>{sub.label}</a>
+                    )}
+                  </li>
                 ))}
               </ul>
             )}
           </li>
         ) : (
           item.href.startsWith('/') ?
-            <li key={item.label}><Link to={item.href}>{item.label}</Link></li> :
+            <li key={item.label}>
+              <Link
+                to={item.href}
+                style={{
+                  background: location.pathname === item.href ? '#90EE90' : 'transparent',
+                  borderLeft: location.pathname === item.href ? '3px solid #ffd700' : '3px solid transparent',
+                  padding: '10px 22px 10px 18px',
+                  display: 'block',
+                  color: '#2D3B4E',
+                  textDecoration: 'none'
+                }}
+                onClick={() => setMobileOpen(false)}
+              >
+                {item.label}
+              </Link>
+            </li> :
             <li key={item.label}><a href={item.href}>{item.label}</a></li>
         )
       )}

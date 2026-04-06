@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
+import CoverInsurance from "../components/CoverInsurance";
 import heroDoctor from "../assets/hero1-crop20.jpg";
 import hero2Image from "../assets/hero2.jpg";
 import hero3Image from "../assets/hero3.jpg";
 import hero4Image from "../assets/hero4.jpg";
 import hero5Image from "../assets/hero5.jpg";
 import hero6Image from "../assets/hero6.jpg";
+import meetingImg from "../assets/meeting.jpg";
 
 const waterFlowStyle = `
   @keyframes fadeInUp {
@@ -382,6 +384,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       <style>{waterFlowStyle}</style>
       <Header />
+      <CoverInsurance />
 {/* bg-gradient-to-b from-teal-950 via-teal-900 to-cyan-900 */}
       <section className="w-full bg-gradient-to-b from-green-950 via-teal-950 to-green-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 md:py-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -414,20 +417,18 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[440px] md:max-w-[520px]">
-              <div className="absolute -top-6 -right-4 h-32 w-32 rounded-full bg-cyan-200/50 blur-3xl" />
-              <div className="absolute -bottom-4 -left-4 h-36 w-36 rounded-full bg-blue-200/50 blur-3xl" />
-
-              <div className="relative rounded-[30px] bg-[#eef3f7] p-4 md:p-6 shadow-[0_20px_50px_rgba(15,23,42,0.16)]">
-                <img
-                  src={heroDoctor}
-                  alt="Doctor"
-                  className="w-full h-[560px] md:h-[660px] rounded-[22px] object-cover object-center"
-                />
-              </div>
-            </div>
-          </div>
+          <div 
+            className="flex justify-center lg:justify-end"
+            style={{
+              backgroundImage: `url(${meetingImg})`,
+              backgroundPosition: 'right center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              borderRadius: '30px',
+              minHeight: '560px',
+              opacity: 0.95
+            }}
+          />
         </div>
       </section>
 

@@ -8,31 +8,13 @@ import doctorImage from '../assets/Doctor.png';
 import questionIcon from '../assets/questionicon.png';
 import meetingImg from '../assets/meeting.jpg';
 
-const steps = [
-  {
-    title: 'EMR Setup',
-    desc: 'Streamline your practice with a fully customized and user-friendly Electronic Medical Records system.',
-  },
-  {
-    title: 'Billing Setup',
-    desc: 'Ensure accurate, efficient, and compliant billing processes from day one.',
-  },
-  {
-    title: 'Clearinghouse Setup',
-    desc: 'Connect seamlessly with payers for faster, error-free claim submissions.',
-  },
-  {
-    title: 'Coding and Posting',
-    desc: 'Accurate coding and timely posting to maximize reimbursements and minimize denials.',
-  },
-  {
-    title: 'AR Management',
-    desc: 'Proactive accounts receivable management to accelerate collections and improve cash flow.',
-  },
-  {
-    title: 'Billing Reports',
-    desc: 'Clear, detailed, and actionable billing reports for full financial visibility and informed decision-making.',
-  },
+const pcmhFeatures = [
+  'Streamlined care coordination across all providers and departments.',
+  'Improved patient engagement through structured workflows and follow-ups.',
+  'Assistance with PCMH recognition and compliance documentation.',
+  'Gap analysis and implementation of best practices for patient care.',
+  'Transparent reporting and performance tracking for quality improvement.',
+  'Enhanced operational efficiency, allowing providers to focus on patient care.',
 ];
 
 const stepColors = ['#E9FFF2', '#F2FFF7', '#E3FFEC', '#EEFFF6', '#E7FFEF'];
@@ -51,7 +33,7 @@ const allServices = [
   'Practice Operations Audit'
 ];
 
-export default function MedicalBilling() {
+export default function Pcmh() {
   const location = useLocation();
   const serviceRoutes = {
     'Medical Billing & Coding': '/medical-billing',
@@ -113,9 +95,9 @@ export default function MedicalBilling() {
             zIndex: 0
           }} />
           <div className="container" style={{position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%'}}>
-            <h1 className="section-title" style={{fontSize: 'clamp(2rem, 6vw, 4.5rem)', fontWeight: '800', marginBottom: 12, color: 'white', animation: 'fadeUp 0.7s 0.1s ease both'}}>Medical Billing & Coding</h1>
+            <h1 className="section-title" style={{fontSize: 'clamp(2rem, 6vw, 4.5rem)', fontWeight: '800', marginBottom: 12, color: 'white', animation: 'fadeUp 0.7s 0.1s ease both'}}>PCMH</h1>
             <div className="section-tag" style={{marginBottom: 18, color: '#4ECDC4', fontSize: 'clamp(1rem, 3.2vw, 1.25rem)', animation: 'fadeUp 0.7s 0s ease both'}}>
-              <Link to="/" style={{color: 'inherit', textDecoration: 'none', cursor: 'pointer', transition: 'opacity 0.2s'}}>Home</Link> &gt; Medical Billing
+              <Link to="/" style={{color: 'inherit', textDecoration: 'none', cursor: 'pointer', transition: 'opacity 0.2s'}}>Home</Link> &gt; PCMH
             </div>
             <p style={{fontSize: 'clamp(0.95rem, 3vw, 1.2rem)', color: 'rgba(255,255,255,0.8)', fontWeight: 600, marginBottom: 0, animation: 'fadeUp 0.7s 0.2s ease both'}}>
               Leave the Billing to Us — Focus on Saving Lives!
@@ -146,20 +128,11 @@ export default function MedicalBilling() {
               paddingLeft: '70px',
               
             }}>
-              <h2 className="section-title" style={{fontSize: 'clamp(1.5rem, 4vw, 2rem)', fontWeight: 800, color: 'var(--teal-dark)', marginBottom: 18}}>Medical Billing</h2>
+              <h2 className="section-title" style={{fontSize: 'clamp(1.5rem, 4vw, 2rem)', fontWeight: 800, color: 'var(--teal-dark)', marginBottom: 18}}>Dental Billing</h2>
               <p style={{fontSize: 'clamp(0.95rem, 3vw, 1.08rem)', color: 'var(--text-mid)', lineHeight: 1.7, marginBottom: 0}}>
-Medical billing can often feel overwhelming—complex processes, constant regulatory updates, and 
-time-consuming administrative work can take focus away from patient care. Our billing services are 
-designed to simplify this entire process, helping you operate more eAiciently while improving your 
-practice’s financial performance. 
-By partnering with us, you benefit from a strategic approach focused on maximizing 
-reimbursements and accelerating payment cycles. Our experienced team, combined with 
-advanced analytics, ensures accuracy, compliance, and consistent follow-through—so you get 
-paid what you deserve, without delays. 
-We take pride in delivering strong collection performance tailored to the unique needs of your 
-practice. With real-time, transparent reporting, you’ll always have clear visibility into your revenue, 
-performance trends, and growth opportunities—empowering you to make informed decisions with 
-confidence.              </p>
+The Patient-Centered Medical Home (PCMH) model improves healthcare quality by emphasizing coordinated, accessible, and patient-centered care. It focuses on continuous patient engagement, preventive care, and better health outcomes through structured clinical processes. However, achieving and maintaining PCMH recognition requires strict adherence to standards, detailed documentation, and consistent performance tracking, making it a complex and resource-intensive process for many practices.
+
+As your PCMH support partner, we simplify and manage the entire process through a hands-on approach. We conduct a comprehensive gap analysis, implement care coordination strategies, enhance patient engagement, and optimize clinical documentation and EHR usage. From application submission to audit readiness, we ensure full compliance while continuously monitoring performance, closing care gaps, and improving operational efficiency. With transparent reporting and actionable insights, we help you achieve not only PCMH recognition but also long-term growth, improved patient outcomes, and stronger financial performance.              </p>
             </div>
 
             {/* Right section - blob with meeting background image */}
@@ -167,7 +140,7 @@ confidence.              </p>
               position: 'relative',
               width: '100%',
               minHeight: '100vh',
-              borderRadius: '40% 0 0 30%',
+              borderRadius: '15% 0 0 20%',
               backgroundImage: `url(${meetingImg})`,
               backgroundPosition: 'center',
               backgroundSize: 'cover',
@@ -259,6 +232,7 @@ confidence.              </p>
                               textAlign: 'left',
                             };
                           })()}
+
                           onMouseEnter={(e) => {
                             e.currentTarget.style.background = '#90EE90';
                             e.currentTarget.style.paddingLeft = '24px';
@@ -357,12 +331,11 @@ confidence.              </p>
               minWidth: 0,
             }}>
               <div className="section-header" style={{marginBottom: 64, position: 'relative', zIndex: 1}}>
-                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>Our core billing services include, but are not limited to </div>
+                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>Our PCMH Services</div>
               </div>
               <div className="billing-steps" style={{
                 display: 'flex',
                 flexDirection: 'row',
-                flexWrap: 'wrap',
                 gap: '24px',
                 justifyContent: 'flex-start',
                 position: 'relative',
@@ -370,35 +343,61 @@ confidence.              </p>
                 alignItems: 'stretch',
                 width: '100%',
               }}>
-                {steps.map((step, idx) => {
-                  return (
-                  <div key={step.title} className="step-card reveal" style={{
-                    background: stepColors[idx % stepColors.length],
-                    borderRadius: 18,
-                    boxShadow: '0 4px 24px rgba(45,59,78,0.08)',
-                    border: '1.5px solid var(--border)',
-                    padding: '32px 24px',
-                    textAlign: 'center',
-                    transition: 'box-shadow 0.2s',
-                    flex: '1 1 auto',
-                    minWidth: '180px',
-                    maxWidth: '240px',
+                <div className="step-card reveal" style={{
+                  background: '#E9FFF2',
+                  borderRadius: 18,
+                  boxShadow: '0 4px 24px rgba(45,59,78,0.08)',
+                  border: '1.5px solid var(--border)',
+                  padding: '32px 28px',
+                  textAlign: 'left',
+                  transition: 'box-shadow 0.2s',
+                  flex: 1,
+                }}>
+                  {/* <div style={{
+                    fontSize: 'clamp(1.05rem, 2.3vw, 1.25rem)',
+                    fontWeight: 700,
+                    color: 'var(--teal-dark)',
+                    marginBottom: 20,
+                    letterSpacing: 0.5,
+                  }}>Our PCMH Services</div> */}
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 16,
                   }}>
-                    <div style={{
-                      fontSize: 'clamp(1.05rem, 2.3vw, 1.25rem)',
-                      fontWeight: 700,
-                      color: 'var(--teal-dark)',
-                      marginBottom: 10,
-                      letterSpacing: 0.5,
-                    }}>{step.title}</div>
-                    <div style={{
-                      fontSize: 'clamp(0.9rem, 2vw, 1rem)',
-                      color: 'var(--text-mid)',
-                      lineHeight: 1.6,
-                    }}>{step.desc}</div>
+                    {pcmhFeatures.map((feature, idx) => (
+                      <div key={idx} style={{
+                        display: 'flex',
+                        gap: 12,
+                        alignItems: 'flex-start',
+                      }}>
+                        <div style={{
+                          minWidth: '20px',
+                          width: '20px',
+                          height: '20px',
+                          borderRadius: '50%',
+                          background: 'var(--teal-dark)',
+                          color: 'white',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '12px',
+                          fontWeight: 'bold',
+                          marginTop: '2px',
+                          flexShrink: 0,
+                        }}>
+                          {idx + 1}
+                        </div>
+                        <div style={{
+                          fontSize: 'clamp(0.9rem, 2vw, 1rem)',
+                          color: 'var(--text-mid)',
+                          lineHeight: 1.6,
+                          paddingTop: '2px',
+                        }}>{feature}</div>
+                      </div>
+                    ))}
                   </div>
-                );
-                })}
+                </div>
               </div>
             </div>
           </div>
@@ -415,7 +414,7 @@ confidence.              </p>
             {/* Cards Section - First on mobile */}
             <div>
               <div className="section-header" style={{marginBottom: 40, position: 'relative', zIndex: 1}}>
-                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>Our core billing services include, but are not limited to</div>
+                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>Our PCMH Services</div>
               </div>
               <div style={{
                 display: 'flex',
@@ -423,33 +422,61 @@ confidence.              </p>
                 gap: '20px',
                 width: '100%',
               }}>
-                {steps.map((step, idx) => {
-                  return (
-                  <div key={step.title} style={{
-                    background: stepColors[idx % stepColors.length],
-                    borderRadius: 18,
-                    boxShadow: '0 4px 24px rgba(45,59,78,0.08)',
-                    border: '1.5px solid var(--border)',
-                    padding: '24px 20px',
-                    textAlign: 'center',
-                    transition: 'box-shadow 0.2s',
-                    width: '100%',
+                <div style={{
+                  background: '#E9FFF2',
+                  borderRadius: 18,
+                  boxShadow: '0 4px 24px rgba(45,59,78,0.08)',
+                  border: '1.5px solid var(--border)',
+                  padding: '24px 20px',
+                  textAlign: 'left',
+                  transition: 'box-shadow 0.2s',
+                  width: '100%',
+                }}>
+                  {/* <div style={{
+                    fontSize: '1.2rem',
+                    fontWeight: 700,
+                    color: 'var(--teal-dark)',
+                    marginBottom: 16,
+                    letterSpacing: 0.5,
+                  }}>Our PCMH Services</div> */}
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 12,
                   }}>
-                    <div style={{
-                      fontSize: '1.2rem',
-                      fontWeight: 700,
-                      color: 'var(--teal-dark)',
-                      marginBottom: 10,
-                      letterSpacing: 0.5,
-                    }}>{step.title}</div>
-                    <div style={{
-                      fontSize: '0.95rem',
-                      color: 'var(--text-mid)',
-                      lineHeight: 1.6,
-                    }}>{step.desc}</div>
+                    {pcmhFeatures.map((feature, idx) => (
+                      <div key={idx} style={{
+                        display: 'flex',
+                        gap: 12,
+                        alignItems: 'flex-start',
+                      }}>
+                        <div style={{
+                          minWidth: '18px',
+                          width: '18px',
+                          height: '18px',
+                          borderRadius: '50%',
+                          background: 'var(--teal-dark)',
+                          color: 'white',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontSize: '11px',
+                          fontWeight: 'bold',
+                          marginTop: '2px',
+                          flexShrink: 0,
+                        }}>
+                          {idx + 1}
+                        </div>
+                        <div style={{
+                          fontSize: '0.95rem',
+                          color: 'var(--text-mid)',
+                          lineHeight: 1.6,
+                          paddingTop: '2px',
+                        }}>{feature}</div>
+                      </div>
+                    ))}
                   </div>
-                );
-                })}
+                </div>
               </div>
             </div>
 
@@ -510,6 +537,7 @@ confidence.              </p>
                               textAlign: 'left',
                             };
                           })()}
+
                           onMouseEnter={(e) => {
                             e.currentTarget.style.background = '#90EE90';
                             e.currentTarget.style.paddingLeft = '20px';

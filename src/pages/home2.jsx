@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { TrendingUp, Target, CheckCircle, Settings, Hammer, BarChart3, Lightbulb, Search, Handshake, Map, PenTool, Rocket, Factory, Building2, Hospital, Package, Zap, Laptop, Beaker, Globe, MapPin, Phone, Mail, Clock, Menu, X } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import meetingImg from '../assets/meeting.jpg';
+import meetingImg from '../assets/medicalpage.jpg';
 
 const styles = `
   :root {
