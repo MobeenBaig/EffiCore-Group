@@ -53,7 +53,8 @@ export default function MedicalBilling() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 2000);
+          // Make visible immediately without staggered delay
+          entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         }
       });
@@ -237,8 +238,8 @@ export default function MedicalBilling() {
                             padding: '12px 20px',
                             color: 'white',
                             textDecoration: 'none',
-                            fontSize: '0.85rem',
-                            fontWeight: 500,
+                            fontSize: '16px',
+                            fontWeight: 600,
                             transition: 'all 0.2s ease',
                             background: service === 'Medical Billing & Coding' ? '#90EE90' : 'transparent',
                             borderLeft: service === 'Medical Billing & Coding' ? '3px solid #ffd700' : '3px solid transparent',
@@ -486,8 +487,8 @@ export default function MedicalBilling() {
                             padding: '12px 16px',
                             color: 'white',
                             textDecoration: 'none',
-                            fontSize: '0.85rem',
-                            fontWeight: 500,
+                            fontSize: '16px',
+                            fontWeight: 600,
                             transition: 'all 0.2s ease',
                             background: service === 'Medical Billing & Coding' ? '#90EE90' : 'transparent',
                             borderLeft: service === 'Medical Billing & Coding' ? '3px solid #ffd700' : '3px solid transparent',
