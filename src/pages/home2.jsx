@@ -1247,7 +1247,7 @@ export default function Home2() {
           <span>all insurances</span>
           <span>including</span>
         </div>
-        <div className="trust-clients" style={{display: 'flex', flexDirection: 'column', gap: 6, alignItems: 'flex-end'}}>
+        <div className="trust-clients" style={{display: 'flex', flexDirection: 'row', gap: 20, alignItems: 'center', justifyContent: 'flex-end', flexWrap: 'wrap'}}>
           <span className="trust-client" style={{color: 'var(--white)', fontWeight: 700}}>HealthFirst</span>
           <span className="trust-client" style={{color: 'var(--white)', fontWeight: 700}}>Fidelis</span>
           <span className="trust-client" style={{color: 'var(--white)', fontWeight: 700}}>Delta Dental</span>
