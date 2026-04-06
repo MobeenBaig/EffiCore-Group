@@ -1242,18 +1242,20 @@ export default function Home2() {
 
       {/* TRUST BAR */}
       <div className="trust-bar" style={{padding: '18px 5%'}}>
-        <div style={{display: 'flex', flexDirection: 'column', gap: 6, alignItems: 'center', width: '100%'}}>
-          <span className="trust-label">We Cover</span>
-          <span className="trust-label">all insurances</span>
-          <span className="trust-label">including</span>
-
-          <div className="trust-clients" style={{display: 'flex', gap: 36, marginTop: 10, flexWrap: 'wrap', justifyContent: 'center'}}>
+        <div style={{display: 'flex', width: '100%', alignItems: 'center', gap: 24}}>
+          <div style={{display: 'flex', flexDirection: 'column', gap: 6, flex: '0 0 180px'}}>
+            <span className="trust-label">We Cover</span>
+            <span className="trust-label">all insurances</span>
+            <span className="trust-label">including</span>
+          </div>
+          <div style={{display: 'flex', flex: 1, justifyContent: 'space-between', alignItems: 'center'}}>
             <span className="trust-client">HealthFirst</span>
             <span className="trust-client">Fidelis</span>
             <span className="trust-client">Delta Dental</span>
             <span className="trust-client">UHC</span>
             <span className="trust-client">Humana</span>
             <span className="trust-client">Cigna</span>
+            <span className="trust-client">Humana</span>
           </div>
         </div>
       </div>
