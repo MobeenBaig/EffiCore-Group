@@ -1208,11 +1208,11 @@ export default function Home2() {
           </div>
         </div>
 
-        <div className="hero-visual">
+        <div className="hero-visual" style={{
+          background: `linear-gradient(to right, rgba(255,255,255,0.98) 60%, rgba(255,255,255,0) 100%), url(${meetingImg}) right center / cover no-repeat`
+        }}>
           <div className="hero-card-stack">
-            <div className="hero-main-card" style={{
-              background: `linear-gradient(90deg, rgba(255,255,255,0.98) 55%, rgba(255,255,255,0.65) 100%), url(${meetingImg}) right center / cover no-repeat`
-            }}>
+            <div className="hero-main-card">
               <div className="hero-card-header">
                 <div className="hero-card-icon"><TrendingUp size={24} color="white" /></div>
                 <div>
