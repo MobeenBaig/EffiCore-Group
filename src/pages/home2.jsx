@@ -1213,14 +1213,7 @@ export default function Home2() {
           </div>
         </div>
 
-        <div className="hero-visual" style={{
-          backgroundImage: `url(${meetingImg})`,
-          backgroundPosition: 'right center',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          width: '100%',
-          minHeight: '100vh'
-        }}>
+        <div className="hero-visual">
           <div className="hero-card-stack">
             <div className="hero-main-card">
               <div className="hero-card-header">
