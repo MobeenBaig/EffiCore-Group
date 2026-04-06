@@ -1209,7 +1209,12 @@ export default function Home2() {
         </div>
 
         <div className="hero-visual" style={{
-          background: `linear-gradient(to right, rgba(255,255,255,0.98) 60%, rgba(255,255,255,0) 100%), url(${meetingImg}) right center / cover no-repeat`
+          backgroundImage: `linear-gradient(to right, rgba(255,255,255,0.98) 60%, rgba(255,255,255,0) 100%), url(${meetingImg})`,
+          backgroundPosition: 'right center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          width: '100%',
+          minHeight: '100vh'
         }}>
           <div className="hero-card-stack">
             <div className="hero-main-card">
