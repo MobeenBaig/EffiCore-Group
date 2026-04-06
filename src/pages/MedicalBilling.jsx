@@ -231,7 +231,7 @@ export default function MedicalBilling() {
                         padding: '0',
                       }}>
                         <Link 
-                          to={`/${service.toLowerCase().replace(/ /g, '-').replace(/&/g, '')}`}
+                          to={`/services/${service.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')}`}
                           style={{
                             display: 'block',
                             padding: '12px 20px',
@@ -240,19 +240,19 @@ export default function MedicalBilling() {
                             fontSize: '0.85rem',
                             fontWeight: 500,
                             transition: 'all 0.2s ease',
-                            background: service === 'Medical Billing & Coding' ? 'rgba(255,255,255,0.12)' : 'transparent',
+                            background: service === 'Medical Billing & Coding' ? '#90EE90' : 'transparent',
                             borderLeft: service === 'Medical Billing & Coding' ? '3px solid #ffd700' : '3px solid transparent',
                             textAlign: 'left',
                           }}
                           onMouseEnter={(e) => {
-                            e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
+                            e.currentTarget.style.background = '#90EE90';
                             e.currentTarget.style.paddingLeft = '24px';
                           }}
                           onMouseLeave={(e) => {
                             if (service !== 'Medical Billing & Coding') {
                               e.currentTarget.style.background = 'transparent';
                             } else {
-                              e.currentTarget.style.background = 'rgba(255,255,255,0.12)';
+                              e.currentTarget.style.background = '#90EE90';
                             }
                             e.currentTarget.style.paddingLeft = '20px';
                           }}
@@ -480,7 +480,7 @@ export default function MedicalBilling() {
                         padding: '0',
                       }}>
                         <Link 
-                          to={`/${service.toLowerCase().replace(/ /g, '-').replace(/&/g, '')}`}
+                          to={`/services/${service.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')}`}
                           style={{
                             display: 'block',
                             padding: '12px 16px',
@@ -489,9 +489,21 @@ export default function MedicalBilling() {
                             fontSize: '0.85rem',
                             fontWeight: 500,
                             transition: 'all 0.2s ease',
-                            background: service === 'Medical Billing & Coding' ? 'rgba(255,255,255,0.12)' : 'transparent',
+                            background: service === 'Medical Billing & Coding' ? '#90EE90' : 'transparent',
                             borderLeft: service === 'Medical Billing & Coding' ? '3px solid #ffd700' : '3px solid transparent',
                             textAlign: 'left',
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.background = '#90EE90';
+                            e.currentTarget.style.paddingLeft = '20px';
+                          }}
+                          onMouseLeave={(e) => {
+                            if (service !== 'Medical Billing & Coding') {
+                              e.currentTarget.style.background = 'transparent';
+                            } else {
+                              e.currentTarget.style.background = '#90EE90';
+                            }
+                            e.currentTarget.style.paddingLeft = '16px';
                           }}
                         >
                           {service}
