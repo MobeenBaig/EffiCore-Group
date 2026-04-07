@@ -1581,7 +1581,7 @@ export default function Home2() {
               </div>
             </div>
             <div className="about-badge">
-              <span className="badge-num">15+</span>
+              <span className="badge-num">6+</span>
               <span className="badge-txt">Years of<br/>Excellence</span>
             </div>
           </div>

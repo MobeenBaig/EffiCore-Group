@@ -135,7 +135,7 @@ export default function Header() {
 
   return (
     <nav ref={navbarRef} className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-      <a href="#home" className="nav-logo" onClick={e => { e.preventDefault(); setMobileOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+      <a href="#" className="nav-logo" onClick={e => { e.preventDefault(); setMobileOpen(false); navigate('/'); }}>
         <img src={logoTrimmed} alt="EffiCore Group Logo" />
       </a>
       <ul className={`nav-links ${mobileOpen ? 'active' : ''}`}>

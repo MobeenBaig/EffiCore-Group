@@ -45,9 +45,9 @@ export default function Footer() {
       <div className="footer-grid">
         <div className="footer-brand">
           <div className="footer-logo">
-            <a href="#home" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+            <Link to="/">
               <img src={companyLogo} alt="Company Logo" />
-            </a>
+            </Link>
           </div>
           <p className="footer-tagline">Efficiency at the Core — we help organisations build the operational foundations needed to grow, compete and sustain performance at scale.</p>
           <div className="footer-socials">
