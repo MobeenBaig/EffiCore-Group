@@ -18,7 +18,8 @@ export default function Footer() {
     setNewsletterStatus({ status: '', message: '' });
 
     try {
-      const response = await fetch('http://localhost:5000/api/newsletter', {
+      const apiUrl = import.meta.env.DEV ? 'http://localhost:5000/api/newsletter' : '/api/newsletter';
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: newsletterEmail.trim() })
