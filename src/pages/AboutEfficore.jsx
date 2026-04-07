@@ -225,6 +225,10 @@ const styles = `
     border-color: var(--teal-light);
   }
 
+  .why-card:last-child {
+    grid-column: span 1;
+  }
+
   .why-title {
     font-family: 'Nunito', sans-serif;
     font-size: 1rem; font-weight: 700;
@@ -360,6 +364,7 @@ const styles = `
     .services-grid { grid-template-columns: 1fr; gap: 16px; }
     .industries-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
     .why-grid { grid-template-columns: 1fr; }
+    .why-card:last-child { grid-column: span 1; max-width: 100%; }
     .results-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
     .process-grid { grid-template-columns: 1fr 1fr; }
     .benefits-grid { grid-template-columns: 1fr; }
@@ -470,8 +475,8 @@ export default function AboutEfficore() {
           ))}
         </div>
         <div style={{ display: 'flex', gap: 16, justifyContent: 'center', marginTop: 40 }} className="reveal">
-          <a href="#contact" className="btn-primary">Get Started</a>
-          <a href="#contact" className="btn-outline">Request Free Audit</a>
+          <a href="/contact" className="btn-primary">Get Started</a>
+          <a href="/contact" className="btn-outline">Request Free Audit</a>
         </div>
       </section>
 
