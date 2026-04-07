@@ -12,14 +12,17 @@ const steps = [
   {
     title: 'HEDIS',
     desc: 'Improve quality scores and compliance with accurate HEDIS data collection and reporting.',
+    route: '/hedis',
   },
   {
     title: 'PCMH (Patient-Centered Medical Home)',
     desc: 'Streamline care coordination and achieve recognition with expert PCMH support.',
+    route: '/pcmh',
   },
   {
     title: 'CCM (Chronic Care Management)',
     desc: 'Enhance patient outcomes and revenue with proactive chronic care management services.',
+    route: '/ccm',
   },
 ];
 
@@ -354,31 +357,44 @@ From improving front-desk operations and optimizing scheduling to enhancing bill
               }}>
                 {steps.map((step, idx) => {
                   return (
-                  <div key={step.title} className="step-card reveal" style={{
-                    background: stepColors[idx % stepColors.length],
-                    borderRadius: 18,
-                    boxShadow: '0 4px 24px rgba(45,59,78,0.08)',
-                    border: '1.5px solid var(--border)',
-                    padding: '32px 24px',
-                    textAlign: 'center',
-                    transition: 'box-shadow 0.2s',
-                    flex: '1 1 auto',
-                    minWidth: '180px',
-                    maxWidth: '240px',
-                  }}>
-                    <div style={{
-                      fontSize: 'clamp(1.05rem, 2.3vw, 1.25rem)',
-                      fontWeight: 700,
-                      color: 'var(--teal-dark)',
-                      marginBottom: 10,
-                      letterSpacing: 0.5,
-                    }}>{step.title}</div>
-                    <div style={{
-                      fontSize: 'clamp(0.9rem, 2vw, 1rem)',
-                      color: 'var(--text-mid)',
-                      lineHeight: 1.6,
-                    }}>{step.desc}</div>
-                  </div>
+                  <Link key={step.title} to={step.route} style={{ textDecoration: 'none' }}>
+                    <div className="step-card reveal" style={{
+                      background: stepColors[idx % stepColors.length],
+                      borderRadius: 18,
+                      boxShadow: '0 4px 24px rgba(45,59,78,0.08)',
+                      border: '1.5px solid var(--border)',
+                      padding: '32px 24px',
+                      textAlign: 'center',
+                      transition: 'all 0.3s ease',
+                      flex: '1 1 auto',
+                      minWidth: '180px',
+                      maxWidth: '240px',
+                      cursor: 'pointer',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-8px)';
+                      e.currentTarget.style.boxShadow = '0 12px 36px rgba(45,59,78,0.15)';
+                      e.currentTarget.style.borderColor = 'var(--teal-light)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = '0 4px 24px rgba(45,59,78,0.08)';
+                      e.currentTarget.style.borderColor = 'var(--border)';
+                    }}>
+                      <div style={{
+                        fontSize: 'clamp(1.05rem, 2.3vw, 1.25rem)',
+                        fontWeight: 700,
+                        color: 'var(--teal-dark)',
+                        marginBottom: 10,
+                        letterSpacing: 0.5,
+                      }}>{step.title}</div>
+                      <div style={{
+                        fontSize: 'clamp(0.9rem, 2vw, 1rem)',
+                        color: 'var(--text-mid)',
+                        lineHeight: 1.6,
+                      }}>{step.desc}</div>
+                    </div>
+                  </Link>
                 );
                 })}
               </div>
@@ -408,29 +424,42 @@ From improving front-desk operations and optimizing scheduling to enhancing bill
               }}>
                 {steps.map((step, idx) => {
                   return (
-                  <div key={step.title} style={{
-                    background: stepColors[idx % stepColors.length],
-                    borderRadius: 18,
-                    boxShadow: '0 4px 24px rgba(45,59,78,0.08)',
-                    border: '1.5px solid var(--border)',
-                    padding: '24px 20px',
-                    textAlign: 'center',
-                    transition: 'box-shadow 0.2s',
-                    width: '100%',
-                  }}>
+                  <Link key={step.title} to={step.route} style={{ textDecoration: 'none' }}>
                     <div style={{
-                      fontSize: '1.2rem',
-                      fontWeight: 700,
-                      color: 'var(--teal-dark)',
-                      marginBottom: 10,
-                      letterSpacing: 0.5,
-                    }}>{step.title}</div>
-                    <div style={{
-                      fontSize: '0.95rem',
-                      color: 'var(--text-mid)',
-                      lineHeight: 1.6,
-                    }}>{step.desc}</div>
-                  </div>
+                      background: stepColors[idx % stepColors.length],
+                      borderRadius: 18,
+                      boxShadow: '0 4px 24px rgba(45,59,78,0.08)',
+                      border: '1.5px solid var(--border)',
+                      padding: '24px 20px',
+                      textAlign: 'center',
+                      transition: 'all 0.3s ease',
+                      width: '100%',
+                      cursor: 'pointer',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateY(-6px)';
+                      e.currentTarget.style.boxShadow = '0 10px 32px rgba(45,59,78,0.12)';
+                      e.currentTarget.style.borderColor = 'var(--teal-light)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = '0 4px 24px rgba(45,59,78,0.08)';
+                      e.currentTarget.style.borderColor = 'var(--border)';
+                    }}>
+                      <div style={{
+                        fontSize: '1.2rem',
+                        fontWeight: 700,
+                        color: 'var(--teal-dark)',
+                        marginBottom: 10,
+                        letterSpacing: 0.5,
+                      }}>{step.title}</div>
+                      <div style={{
+                        fontSize: '0.95rem',
+                        color: 'var(--text-mid)',
+                        lineHeight: 1.6,
+                      }}>{step.desc}</div>
+                    </div>
+                  </Link>
                 );
                 })}
               </div>

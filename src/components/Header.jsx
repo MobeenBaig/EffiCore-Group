@@ -136,7 +136,7 @@ export default function Header() {
           </a>
           {servicesOpen && renderServicesDropdown()}
         </li>
-        <li><a href="#about" onClick={() => setMobileOpen(false)}>About</a></li>
+        <li><Link to="/about" onClick={() => setMobileOpen(false)}>About</Link></li>
         <li><a href="#process" onClick={() => setMobileOpen(false)}>Process</a></li>
         <li><a href="#industries" onClick={() => setMobileOpen(false)}>Industries</a></li>
         <li><a href="#team" onClick={() => setMobileOpen(false)}>Team</a></li>

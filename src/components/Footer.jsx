@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/footer.css';
+import companyLogo from '../assets/companylogo.png';
 
 export default function Footer() {
   const [newsletterEmail, setNewsletterEmail] = useState('');
@@ -42,7 +44,7 @@ export default function Footer() {
         <div className="footer-brand">
           <div className="footer-logo">
             <a href="#home" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-              <img src="/src/assets/companylogo.png" alt="Company Logo" />
+              <img src={companyLogo} alt="Company Logo" />
             </a>
           </div>
           <p className="footer-tagline">Efficiency at the Core — we help organisations build the operational foundations needed to grow, compete and sustain performance at scale.</p>
@@ -69,12 +71,13 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Company</h4>
           <ul className="footer-links">
-            <li><a href="#">About EffiCore</a></li>
-            <li><a href="#">Leadership Team</a></li>
-            <li><a href="#">Case Studies</a></li>
-            <li><a href="#">Insights & Blog</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><Link to="/about">About EffiCore</Link></li>
+            <li><Link to="/leadership">Leadership Team</Link></li>
+            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+            <li><Link to="/faq">FAQ</Link></li>
+            <li><Link to="/careers">Careers</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
+            
           </ul>
         </div>
 

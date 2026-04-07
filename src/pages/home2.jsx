@@ -3,6 +3,7 @@ import { TrendingUp, Target, CheckCircle, Settings, Hammer, BarChart3, Lightbulb
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import meetingImg from '../assets/medicalpage.jpg';
+import hero2 from '../assets/hero2.jpg';
 
 const styles = `
   :root {
@@ -338,8 +339,12 @@ const styles = `
     max-width: none;
   }
   .stats-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    justify-content: center;
     gap: 2px; position: relative; z-index: 1;
+    max-width: 1140px;
+    margin: 0 auto;
   }
   .stat-item {
     padding: 48px 32px; text-align: center; position: relative;
@@ -348,6 +353,10 @@ const styles = `
     content: ''; position: absolute; right: 0; top: 20%; bottom: 20%;
     width: 1px; background: rgba(255,255,255,0.12);
   }
+    .trust-label {
+  display: block;
+  text-align: center;
+}
   .stat-num {
     font-family: 'Nunito', sans-serif;
     font-size: clamp(2.4rem, 4vw, 3.6rem); font-weight: 800;
@@ -371,6 +380,10 @@ const styles = `
     background: var(--cream-soft); border: 1px solid var(--border);
     border-radius: 20px; padding: 32px; position: relative; overflow: hidden;
     transition: all 0.3s ease; cursor: default;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
   .service-card::before {
     content: ''; position: absolute; inset: 0;
@@ -407,6 +420,8 @@ const styles = `
     font-family: 'Nunito', sans-serif; font-size: 1.05rem;
     font-weight: 700; color: var(--primary);
     margin-bottom: 10px; transition: color 0.3s;
+    min-height: 3.6rem;
+    line-height: 1.3;
   }
   .service-desc {
     font-size: 0.88rem; line-height: 1.65;
@@ -434,17 +449,18 @@ const styles = `
   }
   .about-img-content p { color: rgba(255,255,255,0.65); font-size: 0.9rem; }
   .about-badge {
-    position: absolute; top: 28px; right: -20px;
-    background: var(--white); border-radius: 16px;
+    position: absolute; top: 28px; right: 18px;
+    background: linear-gradient(135deg, var(--teal-dark), var(--teal-light));
+    border-radius: 16px;
     padding: 16px 20px; box-shadow: var(--shadow);
     text-align: center; min-width: 120px;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255,255,255,0.18);
   }
   .about-badge .badge-num {
     font-family: 'Nunito', sans-serif; font-size: 2rem;
-    font-weight: 800; color: var(--teal-dark); display: block;
+    font-weight: 800; color: white; display: block;
   }
-  .about-badge .badge-txt { font-size: 0.75rem; color: var(--text-light); }
+  .about-badge .badge-txt { font-size: 0.75rem; color: rgba(255,255,255,0.85); }
   .about-content .section-sub { margin-bottom: 36px; }
   .about-features { display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px; }
   .about-feature {
@@ -548,10 +564,10 @@ const styles = `
   .industry-card:hover .industry-icon { opacity: 0.7; }
   .industry-content { position: relative; z-index: 1; }
   .industry-content h3 {
-    font-family: 'Nunito', sans-serif; font-size: 1.05rem;
+    font-family: 'Nunito', sans-serif; font-size: 1.25rem;
     font-weight: 700; color: var(--white); margin-bottom: 8px;
   }
-  .industry-content p { font-size: 0.83rem; color: rgba(255,255,255,0.65); line-height: 1.6; }
+  .industry-content p { font-size: 0.93rem; color: rgba(255,255,255,0.65); line-height: 1.6; }
 
   .testimonials-section {
     background: linear-gradient(135deg, var(--primary) 0%, var(--teal-dark) 100%);
@@ -605,7 +621,14 @@ const styles = `
   .testimonial-author-info .role { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
 
   .team-section { background: var(--white); }
-  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    justify-content: center;
+    max-width: 1160px;
+    margin: 0 auto;
+  }
   .team-card {
     border-radius: 20px; overflow: hidden;
     border: 1px solid var(--border);
@@ -1292,10 +1315,10 @@ export default function Home2() {
         if (entry.isIntersecting) {
           const nums = entry.target.querySelectorAll('.stat-num');
           const data = [
-            { val: 250, suffix: '+' },
-            { val: 94, suffix: '%' },
-            { val: 2.4, suffix: 'B', special: true },
-            { val: 15, suffix: '+' }
+            { val: 45, suffix: '+' },
+            { val: 95, suffix: '%' },
+            // { val: 2.4, suffix: 'B', special: true },
+            { val: 6 , suffix: '+' }
           ];
           nums.forEach((el, i) => {
             if (data[i].special) {
@@ -1365,13 +1388,12 @@ export default function Home2() {
       console.error('Form submission error:', error);
       setFormStatus({ 
         status: 'error', 
-        message: 'Network error. Please ensure the backend server is running on http://localhost:5000' 
+        message: 'We are currently unable to submit your request. Please try again in a few minutes.' 
       });
     } finally {
       setIsSubmitting(false);
     }
   };
-
 
 
   return (
@@ -1439,9 +1461,9 @@ export default function Home2() {
       <div className="trust-bar" style={{padding: '18px 5%'}}>
         <div style={{display: 'flex', width: '100%', alignItems: 'center', gap: 24}}>
           <div style={{display: 'flex', flexDirection: 'column', gap: 6, flex: '0 0 180px'}}>
-            <span className="trust-label">We Cover</span>
+            <span className="trust-label">   We Cover</span>
             <span className="trust-label">all insurances</span>
-            <span className="trust-label">including</span>
+            <span className="trust-label">   including</span>
           </div>
           <div style={{display: 'flex', flex: 1, justifyContent: 'space-between', alignItems: 'center'}}>
             <span className="trust-client">HealthFirst</span>
@@ -1459,22 +1481,22 @@ export default function Home2() {
       <section className="stats-section">
         <div className="stats-grid reveal">
           <div className="stat-item">
-            <span className="stat-num">250+</span>
+            <span className="stat-num">45+</span>
             <div className="stat-label">Projects Delivered</div>
             <div className="stat-desc">Across 18 countries</div>
           </div>
           <div className="stat-item">
-            <span className="stat-num">94%</span>
+            <span className="stat-num">95%</span>
             <div className="stat-label">Client Retention Rate</div>
             <div className="stat-desc">Year-on-year</div>
           </div>
-          <div className="stat-item">
+          {/* <div className="stat-item">
             <span className="stat-num">$2.4B</span>
             <div className="stat-label">Value Generated</div>
             <div className="stat-desc">For client organisations</div>
-          </div>
+          </div> */}
           <div className="stat-item">
-            <span className="stat-num">15+</span>
+            <span className="stat-num">06+</span>
             <div className="stat-label">Years of Expertise</div>
             <div className="stat-desc">Proven methodologies</div>
           </div>
@@ -1514,10 +1536,22 @@ export default function Home2() {
       <section className="about-section" id="about">
         <div className="about-layout">
           <div className="about-visual-wrap reveal">
-            <div style={{ background: 'linear-gradient(to bottom, #064e3b, #134e4a, #064e3b)', borderRadius: '24px', padding: '40px', minHeight: '480px', display: 'flex', alignItems: 'flex-end' }}>
-              <div>
+            <div style={{
+              backgroundImage: `url(${hero2})`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              borderRadius: '24px',
+              padding: '40px',
+              minHeight: '480px',
+              display: 'flex',
+              alignItems: 'flex-end',
+              position: 'relative',
+              overflow: 'hidden'
+            }}>
+              <div style={{ position: 'relative', zIndex: 2 }}>
                 <h3 style={{ fontSize: '1.8rem', color: 'white', fontWeight: '700', marginBottom: '8px' }}>Built on a Foundation of Results</h3>
-                <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.9rem' }}>Every engagement is driven by measurable outcomes</p>
+                <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.9rem', maxWidth: '380px' }}>Every engagement is driven by measurable outcomes</p>
               </div>
             </div>
             <div className="about-badge">
@@ -1558,11 +1592,11 @@ export default function Home2() {
         </div>
         <div className="process-timeline reveal">
           {[
-            { num: '01', icon: <Search size={20} />, title: 'Discovery', desc: 'Deep-dive into your organisation\'s current state, challenges and strategic ambitions.' },
-            { num: '02', icon: <Map size={20} />, title: 'Diagnosis', desc: 'Root-cause analysis and opportunity mapping to pinpoint where value is being lost.' },
-            { num: '03', icon: <PenTool size={20} />, title: 'Design', desc: 'Co-create tailored solutions and transformation roadmaps with your leadership team.' },
-            { num: '04', icon: <Rocket size={20} />, title: 'Deploy', desc: 'Hands-on implementation support ensuring changes embed effectively across the business.' },
-            { num: '05', icon: <TrendingUp size={20} />, title: 'Sustain', desc: 'Performance monitoring, governance and coaching to lock in gains for the long term.' }
+            { num: '01', icon: <Search size={20} />, title: ' Accurate Eligibility & Verification' },
+            { num: '02', icon: <Map size={20} />, title: 'Clean Medical Coding' },
+            { num: '03', icon: <PenTool size={20} />, title: 'Timely Claim Submission' },
+            { num: '04', icon: <Rocket size={20} />, title: 'Proactive Denial Management ' },
+            { num: '05', icon: <TrendingUp size={20} />, title: 'EAicient Payment Posting & A/R Optimization ' }
           ].map((step) => (
             <div key={step.num} className="process-step">
               <div className="process-num">{step.num}</div>
@@ -1583,12 +1617,12 @@ export default function Home2() {
         </div>
         <div className="industries-grid reveal">
           {[
-            { icon: <Factory size={24} />, title: 'Manufacturing & Industrials', desc: 'Lean transformation, supply chain optimisation and operational excellence programmes.' },
-            { icon: <Building2 size={24} />, title: 'Financial Services', desc: 'Process efficiency, regulatory readiness and front-to-back office transformation.' },
-            { icon: <Hospital size={24} />, title: 'Healthcare & Life Sciences', desc: 'Pathway redesign, capacity optimisation and clinical operations improvement.' },
-            { icon: <Package size={24} />, title: 'Retail & Consumer', desc: 'End-to-end supply chain, fulfilment and category management optimisation.' },
-            { icon: <Zap size={24} />, title: 'Energy & Utilities', desc: 'Asset management, operational safety and transition planning for energy businesses.' },
-            { icon: <Laptop size={24} />, title: 'Technology & SaaS', desc: 'Scaling operations, product delivery efficiency and go-to-market execution.' }
+            { icon: <Factory size={24} />, title: 'Primary Care & Family Medicine', desc: 'End-to-end billing support for high-volume practices Faster claim processing & reduced denials Preventive care & routine visit optimization' },
+            { icon: <Building2 size={24} />, title: 'Dental Billing Services' , desc:'PPO & insurance verification accuracy CDT coding & claim submission expertise Maximizing reimbursements for procedures' },
+            { icon: <Hospital size={24} />, title: 'Specialty Practices' , desc: 'Complex coding (ICD-10, CPT) handling Prior authorization management Specialty-specific compliance' },
+            { icon: <Package size={24} />, title: 'Mental Health & Behavioral Health', desc: 'Therapy session billing & EHR integration Insurance coverage validation Confidential & compliant processing' },
+            { icon: <Zap size={24} />, title: 'Urgent Care & Clinics', desc: 'High-volume claim processing Quick turnaround for reimbursements Real-time eligibility verification' },
+            { icon: <Laptop size={24} />, title: 'Hospitals & Large Facilities', desc: 'Full Revenue Cycle Management (RCM) Denial management & A/R recovery Payment posting & financial reporting' }
           ].map((industry, i) => (
             <div key={i} className="industry-card">
               <div className="industry-card-bg"></div>
@@ -1639,10 +1673,9 @@ export default function Home2() {
         </div>
         <div className="team-grid reveal">
           {[
-            { avatar: 'AK', name: 'Andrew Kamara', role: 'Founder & Managing Director', desc: '20 years leading operational transformation across EMEA and Asia-Pacific markets.', bg: 'linear-gradient(160deg, var(--teal-dark), var(--primary))' },
-            { avatar: 'SR', name: 'Sofia Rodriguez', role: 'Director, Process Excellence', desc: 'Lean Six Sigma Master Black Belt with expertise in manufacturing and logistics.', bg: 'linear-gradient(160deg, #2D3B4E, #3D5A7A)' },
-            { avatar: 'MT', name: 'Marcus Trent', role: 'Director, Digital Transformation', desc: 'Former CTO with deep experience in enterprise technology and change delivery.', bg: 'linear-gradient(160deg, #2A7A72, #1A5C5C)' },
-            { avatar: 'NP', name: 'Nadia Patel', role: 'Head of Organisational Design', desc: 'Specialist in workforce restructuring and capability building for growth-stage firms.', bg: 'linear-gradient(160deg, #1A5C5C, #2D3B4E)' }
+            { avatar: 'CJ', name: 'Cain, Jason', role: 'Founder / Director - CFO',  bg: 'linear-gradient(160deg, var(--teal-dark), var(--primary))' },
+            { avatar: 'MW', name: 'Mark, Williams', role: 'Co-founder / Operations Manager',  bg: 'linear-gradient(160deg, #2D3B4E, #3D5A7A)' },
+            { avatar: 'TF', name: 'Tedd, Fox', role: 'Co-Founder/CEO',  bg: 'linear-gradient(160deg, #2A7A72, #1A5C5C)' },
           ].map((member, i) => (
             <div key={i} className="team-card">
               <div className="team-photo" style={{ background: member.bg }}>
@@ -1783,7 +1816,7 @@ export default function Home2() {
                     onChange={handleFormChange}
                   />
                 </div>
-                <div className="form-group">
+                {/* <div className="form-group">
                   <label>Service Interest</label>
                   <select 
                     name="service"
@@ -1798,7 +1831,7 @@ export default function Home2() {
                     <option>Operational Due Diligence</option>
                     <option>Change Management</option>
                   </select>
-                </div>
+                </div> */}
                 <div className="form-group full">
                   <label>Message *</label>
                   <textarea 
