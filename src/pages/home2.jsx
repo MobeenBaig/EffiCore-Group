@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { TrendingUp, Target, CheckCircle, Settings, Hammer, BarChart3, Lightbulb, Search, Handshake, Map, PenTool, Rocket, Factory, Building2, Hospital, Package, Zap, Laptop, Beaker, Globe, MapPin, Phone, Mail, Clock, Menu, X } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -1259,6 +1260,20 @@ export default function Home2() {
   const [formStatus, setFormStatus] = useState({ status: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navbarRef = useRef(null);
+  const location = useLocation();
+
+  // Scroll to specific section when navigating from other pages
+  useEffect(() => {
+    if (location.state?.scrollToSection) {
+      const timer = setTimeout(() => {
+        const element = document.getElementById(location.state.scrollToSection);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [location.state?.scrollToSection]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -1521,12 +1536,22 @@ export default function Home2() {
               { num: '05', icon: <Search size={20} />, title: 'Operational Due Diligence', desc: 'Deep-dive assessments of operational capability, readiness and efficiency risk for investment, M&A or growth scenarios.' },
               { num: '06', icon: <Handshake size={20} />, title: 'Change Management', desc: 'Structured programmes to guide your workforce through transformation with minimal resistance and maximum engagement.' }
             ].map((service) => (
-              <div key={service.num} className="service-card">
-                <span className="service-num">{service.num}</span>
-                <div className="service-icon">{service.icon}</div>
-                <h3 className="service-title">{service.title}</h3>
-                <p className="service-desc">{service.desc}</p>
-              </div>
+              <Link key={service.num} to="/contact" style={{ textDecoration: 'none' }}>
+                <div className="service-card" style={{ cursor: 'pointer', transition: 'all 0.3s ease' }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-8px)';
+                    e.currentTarget.style.boxShadow = '0 12px 40px rgba(45,59,78,0.2)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 4px 24px rgba(45,59,78,0.08)';
+                  }}>
+                  <span className="service-num">{service.num}</span>
+                  <div className="service-icon">{service.icon}</div>
+                  <h3 className="service-title">{service.title}</h3>
+                  <p className="service-desc">{service.desc}</p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

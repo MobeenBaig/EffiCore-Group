@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logoTrimmed from '../assets/companylogo.png';
 
 const servicesList = [
@@ -29,6 +29,24 @@ export default function Header() {
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const navbarRef = useRef(null);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  // Handle navigation to home2 sections with hash
+  const navigateToSection = (sectionId) => {
+    setMobileOpen(false);
+    if (location.pathname === '/') {
+      // Already on home page, just scroll to section
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 0);
+    } else {
+      // Navigate to home and then scroll
+      navigate('/', { state: { scrollToSection: sectionId } });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -137,9 +155,9 @@ export default function Header() {
           {servicesOpen && renderServicesDropdown()}
         </li>
         <li><Link to="/about" onClick={() => setMobileOpen(false)}>About</Link></li>
-        <li><a href="#process" onClick={() => setMobileOpen(false)}>Process</a></li>
-        <li><a href="#industries" onClick={() => setMobileOpen(false)}>Industries</a></li>
-        <li><a href="#team" onClick={() => setMobileOpen(false)}>Team</a></li>
+        <li><a href="#" onClick={(e) => { e.preventDefault(); navigateToSection('process'); }}>Process</a></li>
+        <li><a href="#" onClick={(e) => { e.preventDefault(); navigateToSection('industries'); }}>Industries</a></li>
+        <li><a href="#" onClick={(e) => { e.preventDefault(); navigateToSection('team'); }}>Team</a></li>
         <li><a href="#contact" className="nav-cta" onClick={() => setMobileOpen(false)}>Get Started</a></li>
       </ul>
       <button
