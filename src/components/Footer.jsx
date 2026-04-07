@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaInstagram } from 'react-icons/fa';
 import '../styles/footer.css';
 import companyLogo from '../assets/companylogo.png';
 
@@ -49,10 +50,10 @@ export default function Footer() {
           </div>
           <p className="footer-tagline">Efficiency at the Core — we help organisations build the operational foundations needed to grow, compete and sustain performance at scale.</p>
           <div className="footer-socials">
-            <a className="footer-social" href="#">in</a>
-            <a className="footer-social" href="#">𝕏</a>
-            <a className="footer-social" href="#">f</a>
-            <a className="footer-social" href="#">▶</a>
+            <a className="footer-social" href="https://www.linkedin.com/company/efficore-group/" target="_blank" rel="noopener noreferrer">in</a>
+            <a className="footer-social" href="https://x.com/efficoregroup" target="_blank" rel="noopener noreferrer">𝕏</a>
+            <a className="footer-social" href="https://www.facebook.com/profile.php?id=61587158592223&sk=directory_education" target="_blank" rel="noopener noreferrer">f</a>
+            <a className="footer-social" href="https://www.instagram.com/efficoregroup/" target="_blank" rel="noopener noreferrer"><FaInstagram size={20} /></a>
           </div>
         </div>
 
