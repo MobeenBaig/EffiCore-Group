@@ -215,6 +215,52 @@ export default function Header() {
         .nav-dropdown {
           position: relative;
         }
+        
+        /* MOBILE RESPONSIVE MENUS */
+        @media (max-width: 768px) {
+          .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 8px;
+            right: auto;
+            width: auto;
+            min-width: 200px;
+            max-width: 250px;
+          }
+          
+          .submenu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 4px;
+            right: auto;
+            width: auto;
+            min-width: 180px;
+            max-width: 200px;
+          }
+          
+          .has-submenu {
+            position: static;
+          }
+          
+          .has-submenu:hover > .submenu {
+            display: block;
+          }
+          
+          .dropdown-link {
+            padding: 10px 16px 10px 14px;
+            font-size: 0.9rem;
+          }
+          
+          .dropdown-menu a,
+          .submenu li a {
+            padding: 10px 16px 10px 14px;
+            font-size: 0.9rem;
+          }
+        }
       `}</style>
     </nav>
   );

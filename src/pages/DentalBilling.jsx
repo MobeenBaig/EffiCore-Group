@@ -10,17 +10,30 @@ import meetingImg from '../assets/meeting.jpg';
 
 const steps = [
   {
-    title: 'Claim Submission Process',
-    desc: 'Ensure all required documents are submitted for claim processing to avoid delays due to missing information or incomplete documentation.',
-  },
-  {
-    title: 'Accounts Receivable Follow-up',
-    desc: 'Regular follow-ups on claims in the AR bucket exceeding 40–60 days to ensure timely resolution and payment.',
-  },
-  {
-    title: 'Payment Posting',
-    desc: 'Track fee schedule updates and post received EFTs/checks promptly to maintain accurate accounts receivable records.',
-  },
+  title: 'Patient Eligibility & Benefits Verification',
+  desc: 'Verify patient coverage and explain treatment benefits before claim submission to avoid unexpected issues.',
+},
+{
+  title: 'Accurate CDT Coding & Clean Claim Submission',
+  desc: 'Ensure correct CDT coding and thoroughly review claims to minimize errors and reduce denials.',
+},
+{
+  title: 'Pre-authorizations & Treatment Plan Breakdowns',
+  desc: 'Handle pre-authorizations, apply frequency rules, and manage insurance downgrades to prevent revenue loss.',
+},
+{
+  title: 'Insurance Follow-ups & AR Management',
+  desc: 'Perform regular follow-ups on unpaid claims and manage accounts receivable to maintain steady cash flow.',
+},
+{
+  title: 'Denial Management & Quick Resubmissions',
+  desc: 'Address denied claims promptly with fast resubmissions and appeals to recover lost revenue.',
+},
+{
+  title: 'Post Payment & Reconciliation',
+  desc: 'Ensure accurate payment posting and reconciliation to keep financial records updated.',
+},
+
 ];
 
 const stepColors = ['#E9FFF2', '#F2FFF7', '#E3FFEC', '#EEFFF6', '#E7FFEF'];
@@ -57,6 +70,9 @@ export default function DentalBilling() {
   const getServiceRoute = (service) => serviceRoutes[service];
 
   useEffect(() => {
+    // Scroll to top when page loads
+    window.scrollTo(0, 0);
+    
     // Reveal animation for all elements with reveal class
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
@@ -69,7 +85,7 @@ export default function DentalBilling() {
       });
     }, { threshold: 0.12 });
     reveals.forEach(el => observer.observe(el));
-  }, []);
+  }, [location.pathname]);
 
   return (
     <>
@@ -102,9 +118,7 @@ export default function DentalBilling() {
           }} />
           <div className="container" style={{position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%'}}>
             <h1 className="section-title" style={{fontSize: 'clamp(2rem, 6vw, 4.5rem)', fontWeight: '800', marginBottom: 12, color: 'white', animation: 'fadeUp 0.7s 0.1s ease both'}}>Dental Billing & Coding</h1>
-            <div className="section-tag" style={{marginBottom: 18, color: '#4ECDC4', fontSize: 'clamp(1rem, 3.2vw, 1.25rem)', animation: 'fadeUp 0.7s 0s ease both'}}>
-              <Link to="/" style={{color: 'inherit', textDecoration: 'none', cursor: 'pointer', transition: 'opacity 0.2s'}}>Home</Link> &gt; Dental Billing
-            </div>
+           
             <p style={{fontSize: 'clamp(0.95rem, 3vw, 1.2rem)', color: 'rgba(255,255,255,0.8)', fontWeight: 600, marginBottom: 0, animation: 'fadeUp 0.7s 0.2s ease both'}}>
               Leave the Billing to Us — Focus on Saving Lives!
             </p>
@@ -121,9 +135,9 @@ export default function DentalBilling() {
           display: 'flex',
           alignItems: 'center',
         }}>
-          <div style={{ width: '100%', height: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
+          <div style={{ width: '100%', height: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }} className="content-grid">
             {/* Left section - Medical Billing text */}
-            <div style={{
+            <div className="content-text" style={{
               opacity: 0,
               transform: 'translateY(32px)',
               animation: 'fadeUp 0.7s 0.3s ease both',
@@ -148,7 +162,7 @@ reliability.               </p>
             </div>
 
             {/* Right section - blob with meeting background image */}
-            <div style={{
+            <div className="content-image" style={{
               position: 'relative',
               width: '100%',
               minHeight: '100vh',
@@ -343,7 +357,7 @@ reliability.               </p>
               minWidth: 0,
             }}>
               <div className="section-header" style={{marginBottom: 64, position: 'relative', zIndex: 1}}>
-                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>Applied</div>
+                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>Key Features of Our Dental Billing Services</div>
               </div>
               <div className="billing-steps" style={{
                 display: 'flex',
@@ -401,7 +415,7 @@ reliability.               </p>
             {/* Cards Section - First on mobile */}
             <div>
               <div className="section-header" style={{marginBottom: 40, position: 'relative', zIndex: 1}}>
-                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>Applied</div>
+                <div className="section-tag" style={{color: 'var(--teal-dark)', fontSize: 'clamp(1.25rem, 3vw, 1.65rem)', fontWeight: 800, letterSpacing: '0.4px', marginBottom: 16, display: 'inline-block'}}>Key Features of Our Dental Billing Services</div>
               </div>
               <div style={{
                 display: 'flex',
@@ -599,6 +613,51 @@ reliability.               </p>
           }
           .mobile-layout {
             display: flex !important;
+          }
+          
+          /* Responsive Grid Layout for Content Section */
+          .content-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+            align-items: stretch !important;
+            padding: 0 20px !important;
+          }
+          
+          .content-text {
+            minHeight: auto !important;
+            paddingLeft: 0 !important;
+            paddingRight: 20px !important;
+            padding: 40px 20px !important;
+          }
+          
+          .content-image {
+            minHeight: 300px !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .content-text {
+            paddingLeft: 0 !important;
+            paddingRight: 0 !important;
+            padding: 30px 16px !important;
+          }
+          
+          .content-text h2 {
+            fontSize: 1.5rem !important;
+            marginBottom: 12px !important;
+          }
+          
+          .content-text p {
+            fontSize: 0.9rem !important;
+            lineHeight: 1.6 !important;
+          }
+          
+          .content-grid {
+            gap: 20px !important;
+          }
+          
+          .content-image {
+            minHeight: 250px !important;
           }
         }
       `}</style>

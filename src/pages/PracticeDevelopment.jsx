@@ -57,6 +57,9 @@ export default function PracticeDevelopment() {
   const getServiceRoute = (service) => serviceRoutes[service];
 
   useEffect(() => {
+    // Scroll to top when page loads
+    window.scrollTo(0, 0);
+    
     // Reveal animation for all elements with reveal class
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
@@ -69,7 +72,7 @@ export default function PracticeDevelopment() {
       });
     }, { threshold: 0.12 });
     reveals.forEach(el => observer.observe(el));
-  }, []);
+  }, [location.pathname]);
 
   return (
     <>
@@ -102,9 +105,7 @@ export default function PracticeDevelopment() {
           }} />
           <div className="container" style={{position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%'}}>
             <h1 className="section-title" style={{fontSize: 'clamp(2rem, 6vw, 4.5rem)', fontWeight: '800', marginBottom: 12, color: 'white', animation: 'fadeUp 0.7s 0.1s ease both'}}>Practice Development</h1>
-            <div className="section-tag" style={{marginBottom: 18, color: '#4ECDC4', fontSize: 'clamp(1rem, 3.2vw, 1.25rem)', animation: 'fadeUp 0.7s 0s ease both'}}>
-              <Link to="/" style={{color: 'inherit', textDecoration: 'none', cursor: 'pointer', transition: 'opacity 0.2s'}}>Home</Link> &gt; Practice Development
-            </div>
+           
             <p style={{fontSize: 'clamp(0.95rem, 3vw, 1.2rem)', color: 'rgba(255,255,255,0.8)', fontWeight: 600, marginBottom: 0, animation: 'fadeUp 0.7s 0.2s ease both'}}>
               Leave the Billing to Us — Focus on Saving Lives!
             </p>
@@ -121,9 +122,9 @@ export default function PracticeDevelopment() {
           display: 'flex',
           alignItems: 'center',
         }}>
-          <div style={{ width: '100%', height: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
+          <div className="content-grid" style={{ width: '100%', height: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
             {/* Left section - Medical Billing text */}
-            <div style={{
+            <div className="content-text" style={{
               opacity: 0,
               transform: 'translateY(32px)',
               animation: 'fadeUp 0.7s 0.3s ease both',
@@ -142,7 +143,7 @@ From improving front-desk operations and optimizing scheduling to enhancing bill
             </div>
 
             {/* Right section - blob with meeting background image */}
-            <div style={{
+            <div className="content-image" style={{
               position: 'relative',
               width: '100%',
               minHeight: '100vh',
@@ -595,6 +596,59 @@ From improving front-desk operations and optimizing scheduling to enhancing bill
           }
           .mobile-layout {
             display: flex !important;
+          }
+          
+          /* Responsive Grid Layout for Content Section */
+          .content-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+            align-items: stretch !important;
+            padding: 0 20px !important;
+          }
+          
+          .content-text {
+            minHeight: auto !important;
+            paddingLeft: 0 !important;
+            paddingRight: 20px !important;
+            padding: 40px 20px !important;
+          }
+          
+          .content-image {
+            minHeight: 300px !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .content-text {
+            paddingLeft: 0 !important;
+            paddingRight: 0 !important;
+            padding: 30px 16px !important;
+          }
+          
+          .content-text h2 {
+            fontSize: 1.5rem !important;
+            marginBottom: 12px !important;
+          }
+          
+          .content-text p {
+            fontSize: 0.9rem !important;
+            lineHeight: 1.6 !important;
+          }
+          
+          .content-image {
+            minHeight: 250px !important;
+          }
+          
+          /* Ensure mobile layout sections are full width */
+          .mobile-layout > div {
+            width: 100%;
+          }
+          
+          /* Make sidebar menu stack vertically on mobile */
+          .mobile-layout .sidebar-wrapper {
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
           }
         }
       `}</style>

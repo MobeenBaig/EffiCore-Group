@@ -65,6 +65,9 @@ export default function Credentialing() {
   const getServiceRoute = (service) => serviceRoutes[service];
 
   useEffect(() => {
+    // Scroll to top when page loads
+    window.scrollTo(0, 0);
+    
     // Reveal animation for all elements with reveal class
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
@@ -77,7 +80,7 @@ export default function Credentialing() {
       });
     }, { threshold: 0.12 });
     reveals.forEach(el => observer.observe(el));
-  }, []);
+  }, [location.pathname]);
 
   return (
     <>
@@ -110,9 +113,7 @@ export default function Credentialing() {
           }} />
           <div className="container" style={{position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%'}}>
             <h1 className="section-title" style={{fontSize: 'clamp(2rem, 6vw, 4.5rem)', fontWeight: '800', marginBottom: 12, color: 'white', animation: 'fadeUp 0.7s 0.1s ease both'}}>Credentialing</h1>
-            <div className="section-tag" style={{marginBottom: 18, color: '#4ECDC4', fontSize: 'clamp(1rem, 3.2vw, 1.25rem)', animation: 'fadeUp 0.7s 0s ease both'}}>
-              <Link to="/" style={{color: 'inherit', textDecoration: 'none', cursor: 'pointer', transition: 'opacity 0.2s'}}>Home</Link> &gt; Credentialing
-            </div>
+           
             <p style={{fontSize: 'clamp(0.95rem, 3vw, 1.2rem)', color: 'rgba(255,255,255,0.8)', fontWeight: 600, marginBottom: 0, animation: 'fadeUp 0.7s 0.2s ease both'}}>
               Leave the Billing to Us — Focus on Saving Lives!
             </p>
@@ -129,9 +130,9 @@ export default function Credentialing() {
           display: 'flex',
           alignItems: 'center',
         }}>
-          <div style={{ width: '100%', height: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
+          <div style={{ width: '100%', height: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }} className="content-grid">
             {/* Left section - Medical Billing text */}
-            <div style={{
+            <div className="content-text" style={{
               opacity: 0,
               transform: 'translateY(32px)',
               animation: 'fadeUp 0.7s 0.3s ease both',
@@ -142,7 +143,7 @@ export default function Credentialing() {
               paddingLeft: '70px',
               
             }}>
-              <h2 className="section-title" style={{fontSize: 'clamp(1.5rem, 4vw, 2rem)', fontWeight: 800, color: 'var(--teal-dark)', marginBottom: 18}}>Dental Billing</h2>
+              <h2 className="section-title" style={{fontSize: 'clamp(1.5rem, 4vw, 2rem)', fontWeight: 800, color: 'var(--teal-dark)', marginBottom: 18}}>Credentialing</h2>
               <p style={{fontSize: 'clamp(0.95rem, 3vw, 1.08rem)', color: 'var(--text-mid)', lineHeight: 1.7, marginBottom: 0}}>
 Medical credentialing is a critical process used to assess a provider’s qualifications, experience, 
 and professional history to ensure competency and compliance. It involves a thorough review of 
@@ -159,7 +160,7 @@ visibility into the progress at every stage.              </p>
             </div>
 
             {/* Right section - blob with meeting background image */}
-            <div style={{
+            <div className="content-image" style={{
               position: 'relative',
               width: '100%',
               minHeight: '100vh',
@@ -490,30 +491,32 @@ visibility into the progress at every stage.              </p>
                         padding: '0',
                       }}>
                         <Link 
-                          to={service === 'Dental Billing & Coding' ? '/dental-billing' : service === 'Medical Billing & Coding' ? '/medical-billing' : service === 'Credentialing' ? '/credentialing' : `/services/${service.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')}`}
-                          style={{
-                            display: 'block',
-                            padding: '12px 16px',
-                            color: 'white',
-                            textDecoration: 'none',
-                            fontSize: '16px',
-                            fontWeight: 600,
-                            transition: 'all 0.2s ease',
-                            background: service === 'Dental Billing & Coding' ? '#90EE90' : 'transparent',
-                            borderLeft: service === 'Dental Billing & Coding' ? '3px solid #ffd700' : '3px solid transparent',
-                            textAlign: 'left',
-                          }}
+                          to={getServiceRoute(service)}
+                          style={(() => {
+                            const route = getServiceRoute(service);
+                            const isActive = location.pathname === route;
+                            return {
+                              display: 'block',
+                              padding: '12px 16px',
+                              color: 'white',
+                              textDecoration: 'none',
+                              fontSize: '16px',
+                              fontWeight: 600,
+                              transition: 'all 0.2s ease',
+                              background: isActive ? '#90EE90' : 'transparent',
+                              borderLeft: isActive ? '3px solid #ffd700' : '3px solid transparent',
+                              textAlign: 'left',
+                            };
+                          })()}
 
                           onMouseEnter={(e) => {
                             e.currentTarget.style.background = '#90EE90';
                             e.currentTarget.style.paddingLeft = '20px';
                           }}
                           onMouseLeave={(e) => {
-                            if (service !== 'Medical Billing & Coding') {
-                              e.currentTarget.style.background = 'transparent';
-                            } else {
-                              e.currentTarget.style.background = '#90EE90';
-                            }
+                            const route = getServiceRoute(service);
+                            const isActive = location.pathname === route;
+                            e.currentTarget.style.background = isActive ? '#90EE90' : 'transparent';
                             e.currentTarget.style.paddingLeft = '16px';
                           }}
                         >
@@ -608,6 +611,51 @@ visibility into the progress at every stage.              </p>
           }
           .mobile-layout {
             display: flex !important;
+          }
+          
+          /* Responsive Grid Layout for Content Section */
+          .content-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+            align-items: stretch !important;
+            padding: 0 20px !important;
+          }
+          
+          .content-text {
+            minHeight: auto !important;
+            paddingLeft: 0 !important;
+            paddingRight: 20px !important;
+            padding: 40px 20px !important;
+          }
+          
+          .content-image {
+            minHeight: 300px !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .content-text {
+            paddingLeft: 0 !important;
+            paddingRight: 0 !important;
+            padding: 30px 16px !important;
+          }
+          
+          .content-text h2 {
+            fontSize: 1.5rem !important;
+            marginBottom: 12px !important;
+          }
+          
+          .content-text p {
+            fontSize: 0.9rem !important;
+            lineHeight: 1.6 !important;
+          }
+          
+          .content-grid {
+            gap: 20px !important;
+          }
+          
+          .content-image {
+            minHeight: 250px !important;
           }
         }
       `}</style>
