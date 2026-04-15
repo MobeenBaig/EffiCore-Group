@@ -1622,7 +1622,7 @@ export default function Home2() {
             { num: '02', icon: <Map size={20} />, title: 'Clean Medical Coding' },
             { num: '03', icon: <PenTool size={20} />, title: 'Timely Claim Submission' },
             { num: '04', icon: <Rocket size={20} />, title: 'Proactive Denial Management ' },
-            { num: '05', icon: <TrendingUp size={20} />, title: 'EAicient Payment Posting & A/R Optimization ' }
+            { num: '05', icon: <TrendingUp size={20} />, title: 'Efficient Payment Posting & A/R Optimization ' }
           ].map((step) => (
             <div key={step.num} className="process-step">
               <div className="process-num">{step.num}</div>

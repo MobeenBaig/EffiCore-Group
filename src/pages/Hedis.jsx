@@ -6,7 +6,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import doctorImage from '../assets/Doctor.png';
 import questionIcon from '../assets/questionicon.png';
-import meetingImg from '../assets/meeting.jpg';
+import meetingImg from '../assets/hedis.png';
 
 const hedisFeatures = [
   'Accurate data collection and abstraction for all HEDIS measures.',
