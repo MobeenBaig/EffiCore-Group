@@ -313,7 +313,7 @@ reliability.               </p>
           }
           
           .content-image {
-            min-height: 300px !important;
+            min-height: 400px !important;
           }
         }
         

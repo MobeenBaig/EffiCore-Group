@@ -109,7 +109,7 @@ As your PCMH support partner, we simplify and manage the entire process through 
             </div>
 
             {/* Right section - blob with meeting background image */}
-            <div style={{
+            <div className="content-image" style={{
               position: 'relative',
               width: '100%',
               minHeight: '100vh',
@@ -341,7 +341,7 @@ As your PCMH support partner, we simplify and manage the entire process through 
           }
           
           .content-image {
-            min-height: 300px !important;
+            min-height: 400px !important;
           }
         }
         
@@ -368,6 +368,7 @@ As your PCMH support partner, we simplify and manage the entire process through 
           
           .content-image {
             min-height: 250px !important;
+           
           }
         }
       `}</style>

@@ -109,7 +109,7 @@ Managing CCM in-house can be challenging due to the need for ongoing communicati
             </div>
 
             {/* Right section - blob with meeting background image */}
-            <div style={{
+            <div className="content-image" style={{
               position: 'relative',
               width: '100%',
               minHeight: '100vh',
@@ -341,7 +341,7 @@ Managing CCM in-house can be challenging due to the need for ongoing communicati
           }
           
           .content-image {
-            min-height: 300px !important;
+            min-height: 400px !important;
           }
         }
         

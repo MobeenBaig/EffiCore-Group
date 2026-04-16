@@ -310,7 +310,7 @@ visibility into the progress at every stage.              </p>
           }
           
           .content-image {
-            min-height: 300px !important;
+            min-height: 400px !important;
           }
         }
         
@@ -336,7 +336,7 @@ visibility into the progress at every stage.              </p>
           }
           
           .content-image {
-            min-height: 255px !important;
+            min-height: 250px !important;
           }
         }
       `}</style>

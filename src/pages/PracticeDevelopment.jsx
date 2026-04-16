@@ -327,7 +327,7 @@ From improving front-desk operations and optimizing scheduling to enhancing bill
           }
           
           .content-image {
-            min-height: 300px !important;
+            min-height: 400px !important;
           }
         }
         

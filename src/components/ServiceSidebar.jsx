@@ -46,7 +46,7 @@ export default function ServiceSidebar() {
             top: auto !important;
           }
           .sidebar-wrapper > div {
-            width: 100% !important;
+            width: 280px !important;
           }
         }
       `}</style>

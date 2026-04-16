@@ -342,7 +342,7 @@ Beyond scheduling, we optimize your calendar to reduce no-shows and improve pati
           }
           
           .content-image {
-            min-height: 300px !important;
+            min-height: 400px !important;
           }
         }
         

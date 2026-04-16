@@ -340,7 +340,7 @@ stay focused on delivering high-quality patient care and achieving better outcom
           }
           
           .content-image {
-            min-height: 300px !important;
+            min-height: 400px !important;
           }
         }
         

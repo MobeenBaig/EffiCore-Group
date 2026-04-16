@@ -342,7 +342,7 @@ From encounter documentation and progress notes to audit preparation and record 
           }
           
           .content-image {
-            min-height: 300px !important;
+            min-height: 400px !important;
           }
         }
         
