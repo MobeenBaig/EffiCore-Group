@@ -35,15 +35,31 @@ export default function ServiceSidebar() {
   const location = useLocation();
 
   return (
-    <div className="sidebar-wrapper" style={{
-      flex: '0 0 280px',
-      position: 'sticky',
-      top: '100px',
-      alignSelf: 'flex-start',
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '24px',
-    }}>
+    <>
+      <style>{`
+        @media (max-width: 768px) {
+          .sidebar-wrapper {
+            max-width: 420px !important;
+            margin: 0 auto !important;
+            align-self: center !important;
+            position: static !important;
+            top: auto !important;
+          }
+          .sidebar-wrapper > div {
+            width: 100% !important;
+          }
+        }
+      `}</style>
+
+      <div className="sidebar-wrapper" style={{
+        flex: '0 0 280px',
+        position: 'sticky',
+        top: '100px',
+        alignSelf: 'flex-start',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '24px',
+      }}>
       {/* All Services Card */}
       <div style={{
         background: 'linear-gradient(to bottom, #064e3b, #134e4a, #064e3b)',
@@ -187,5 +203,7 @@ export default function ServiceSidebar() {
         </Link>
       </div>
     </div>
+    </>
   );
+  
 }
