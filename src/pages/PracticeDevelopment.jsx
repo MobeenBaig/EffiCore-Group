@@ -320,14 +320,14 @@ From improving front-desk operations and optimizing scheduling to enhancing bill
           }
           
           .content-text {
-            minHeight: auto !important;
+            min-height: auto !important;
             paddingLeft: 0 !important;
             paddingRight: 20px !important;
             padding: 40px 20px !important;
           }
           
           .content-image {
-            minHeight: 300px !important;
+            min-height: 300px !important;
           }
         }
         
@@ -349,7 +349,7 @@ From improving front-desk operations and optimizing scheduling to enhancing bill
           }
           
           .content-image {
-            minHeight: 250px !important;
+            min-height: 250px !important;
           }
           
           /* Ensure mobile layout sections are full width */

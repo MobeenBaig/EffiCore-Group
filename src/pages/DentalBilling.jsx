@@ -306,14 +306,14 @@ reliability.               </p>
           }
           
           .content-text {
-            minHeight: auto !important;
+            min-height: auto !important;
             paddingLeft: 0 !important;
             paddingRight: 20px !important;
             padding: 40px 20px !important;
           }
           
           .content-image {
-            minHeight: 300px !important;
+            min-height: 300px !important;
           }
         }
         
@@ -339,7 +339,7 @@ reliability.               </p>
           }
           
           .content-image {
-            minHeight: 250px !important;
+            min-height: 250px !important;
           }
         }
       `}</style>

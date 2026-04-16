@@ -334,14 +334,14 @@ Managing CCM in-house can be challenging due to the need for ongoing communicati
           }
           
           .content-text {
-            minHeight: auto !important;
+            min-height: auto !important;
             paddingLeft: 0 !important;
             paddingRight: 20px !important;
             padding: 40px 20px !important;
           }
           
           .content-image {
-            minHeight: 300px !important;
+            min-height: 300px !important;
           }
         }
         
@@ -367,7 +367,7 @@ Managing CCM in-house can be challenging due to the need for ongoing communicati
           }
           
           .content-image {
-            minHeight: 250px !important;
+            min-height: 250px !important;
           }
         }
       `}</style>

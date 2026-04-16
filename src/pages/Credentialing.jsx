@@ -303,14 +303,14 @@ visibility into the progress at every stage.              </p>
           }
           
           .content-text {
-            minHeight: auto !important;
+            min-height: auto !important;
             paddingLeft: 0 !important;
             paddingRight: 20px !important;
             padding: 40px 20px !important;
           }
           
           .content-image {
-            minHeight: 300px !important;
+            min-height: 300px !important;
           }
         }
         
@@ -336,7 +336,7 @@ visibility into the progress at every stage.              </p>
           }
           
           .content-image {
-            minHeight: 250px !important;
+            min-height: 255px !important;
           }
         }
       `}</style>

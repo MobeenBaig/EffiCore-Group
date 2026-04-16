@@ -310,14 +310,14 @@ management, you can stay focused on delivering quality patient care with confide
           }
           
           .content-text {
-            minHeight: auto !important;
+            min-height: auto !important;
             paddingLeft: 0 !important;
             paddingRight: 20px !important;
             padding: 40px 20px !important;
           }
           
           .content-image {
-            minHeight: 300px !important;
+            min-height: 300px !important;
           }
         }
         
@@ -343,7 +343,7 @@ management, you can stay focused on delivering quality patient care with confide
           }
           
           .content-image {
-            minHeight: 250px !important;
+            min-height: 250px !important;
           }
         }
       `}</style>

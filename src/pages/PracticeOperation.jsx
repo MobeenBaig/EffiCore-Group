@@ -320,14 +320,14 @@ We review all critical areas of your practice, including billing, documentation,
           }
           
           .content-text {
-            minHeight: auto !important;
+            min-height: auto !important;
             paddingLeft: 0 !important;
             paddingRight: 20px !important;
             padding: 40px 20px !important;
           }
           
           .content-image {
-            minHeight: 300px !important;
+            min-height: 250px !important;
           }
         }
         
@@ -353,7 +353,7 @@ We review all critical areas of your practice, including billing, documentation,
           }
           
           .content-image {
-            minHeight: 250px !important;
+            min-height: 125px !important;
           }
         }
       `}</style>

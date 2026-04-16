@@ -1072,6 +1072,7 @@ const styles = `
       max-width: 100%;
     }
     .hero-visual { display: none; }
+    .hero-bg-shape { display: none; }
     .hero-bg-dots { display: none; }
     .hero-actions {
       flex-direction: column;
@@ -1232,15 +1233,44 @@ const styles = `
       padding: 14px 5%;
       gap: 20px;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      text-align: center;
+    }
+    .trust-bar-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 100%;
+      align-items: center;
+    }
+    .trust-labels {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+      gap: 4px !important;
+      line-height: 1.1;
+      padding: 0 !important;
+    }
+    .trust-label {
+      display: block;
+      line-height: 1.1;
+      margin: 0;
+    }
+    .trust-labels {
+      flex: 0 0 25px !important;
     }
     .trust-clients {
+      display: flex !important;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
       width: 100%;
+      align-items: center;
     }
     .trust-client {
-      font-size: 0.85rem;
+      font-size: 0.95rem;
+      width: 100%;
+      white-space: normal;
+      max-width: 280px;
     }
   }
 `;
@@ -1475,13 +1505,13 @@ export default function Home2() {
 
       {/* TRUST BAR */}
       <div className="trust-bar" style={{padding: '18px 5%'}}>
-        <div style={{display: 'flex', width: '100%', alignItems: 'center', gap: 24}}>
-          <div style={{display: 'flex', flexDirection: 'column', gap: 6, flex: '0 0 180px'}}>
-            <span className="trust-label">   We Cover</span>
+        <div className="trust-bar-inner" style={{display: 'flex', width: '100%', alignItems: 'center', gap: 24}}>
+          <div className="trust-labels" style={{display: 'flex', flexDirection: 'column', gap: 6, flex: '0 0 180px'}}>
+            <span className="trust-label">We Cover</span>
             <span className="trust-label">all insurances</span>
-            <span className="trust-label">   including</span>
+            <span className="trust-label">including</span>
           </div>
-          <div style={{display: 'flex', flex: 1, justifyContent: 'space-between', alignItems: 'center'}}>
+          <div className="trust-clients" style={{display: 'flex', flex: 1, justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px'}}>
             <span className="trust-client">HealthFirst</span>
             <span className="trust-client">Fidelis</span>
             <span className="trust-client">Delta Dental</span>
