@@ -44,6 +44,7 @@ export default function ServiceSidebar() {
             align-self: center !important;
             position: static !important;
             top: auto !important;
+            align-items: center !important;
           }
           .sidebar-wrapper > div {
             width: 280px !important;
