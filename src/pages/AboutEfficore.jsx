@@ -343,6 +343,17 @@ const styles = `
       min-height: 60vh;
     }
 
+    .button-row {
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .button-row a {
+      width: 100%;
+      max-width: 100%;
+    }
+
     .hero-about h1 {
       font-size: clamp(2rem, 4vw, 3rem);
     }
@@ -403,6 +414,12 @@ const styles = `
       width: 100%;
       padding: 12px 20px;
       font-size: 0.85rem;
+    }
+
+    .button-row a {
+      width: 100%;
+      padding: 12px 20px;
+      font-size: 0.95rem;
     }
 
     .services-grid { grid-template-columns: 1fr; }
@@ -476,7 +493,7 @@ export default function AboutEfficore() {
             </div>
           ))}
         </div>
-        <div className="hero-actions reveal" style={{ display: 'flex', gap: 16, justifyContent: 'center', marginTop: 40 }}>
+        <div style={{ display: 'flex', gap: 16, justifyContent: 'center', marginTop: 40 }} className="reveal button-row">
           <a href="/contact" className="btn-primary">Get Started</a>
           <a href="/contact" className="btn-outline">Request Free Audit</a>
         </div>
@@ -491,7 +508,7 @@ export default function AboutEfficore() {
           <p className="section-sub" style={{ maxWidth: '100%' }}>From patient eligibility verification to payment posting, we ensure accuracy, compliance, and efficiency at every step of the revenue cycle. With a dedicated team and advanced systems, we help practices achieve consistent cash flow and operational excellence.</p>
         </div>
       </section>
-
+y
       {/* SERVICES */}
       <section style={{ background: 'var(--white)' }}>
         <div className="reveal" style={{ maxWidth: 1200, margin: '0 auto' }}>

@@ -1063,6 +1063,7 @@ const styles = `
       grid-template-columns: 1fr; 
       padding: 80px 5% 50px; 
       gap: 40px;
+      min-height: 60vh !important;
     }
     .hero h1 {
       font-size: clamp(2rem, 4vw, 3rem);
@@ -1081,6 +1082,12 @@ const styles = `
     .hero-actions a {
       width: 100%;
       text-align: center;
+    }
+    
+    @media (max-width: 480px) {
+      .hero {
+        min-height: 80vh !important;
+      }
     }
     
     /* SERVICES SECTION MOBILE FIXES */
