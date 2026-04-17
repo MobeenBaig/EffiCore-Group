@@ -340,6 +340,7 @@ const styles = `
     .hero-about {
       padding: 80px 5% 50px;
       gap: 40px;
+      min-height: 60vh;
     }
 
     .hero-about h1 {
@@ -380,6 +381,7 @@ const styles = `
 
     .hero-about {
       padding: 60px 5% 40px;
+      min-height: 50vh;
     }
 
     .hero-about h1 {
@@ -474,7 +476,7 @@ export default function AboutEfficore() {
             </div>
           ))}
         </div>
-        <div style={{ display: 'flex', gap: 16, justifyContent: 'center', marginTop: 40 }} className="reveal">
+        <div className="hero-actions reveal" style={{ display: 'flex', gap: 16, justifyContent: 'center', marginTop: 40 }}>
           <a href="/contact" className="btn-primary">Get Started</a>
           <a href="/contact" className="btn-outline">Request Free Audit</a>
         </div>
