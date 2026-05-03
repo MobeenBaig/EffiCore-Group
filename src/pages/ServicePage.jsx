@@ -20,6 +20,7 @@ export default function ServicePage(){
         <h1 style={{ fontFamily: "'Nunito', sans-serif", fontSize: '2rem', marginBottom: 12 }}>{title}</h1>
         <p style={{ color: 'var(--text-mid)' }}>This is the service page for <strong>{title}</strong>. You can customize this page to show details, contact information, and a CTA to start a project.</p>
         <div style={{ marginTop: 18 }}>
+          {/* COMMENT */}
           <Link to="/" style={{ color: '#0f766e' }}>← Back to Home</Link>
         </div>
       </div>
