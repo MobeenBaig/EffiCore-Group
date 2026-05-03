@@ -7,5 +7,12 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
+  ],
+  "redirects": [
+    {
+      "source": "https://efficoregroup.com/:path*",
+      "destination": "https://www.efficoregroup.com/:path*",
+      "permanent": true
+    }
   ]
 }
