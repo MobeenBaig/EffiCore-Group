@@ -1,24 +1,11 @@
 {
-  "builds": [
+  "routes": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
-  "rewrites": [
+      "handle": "filesystem"
+    },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
-  "redirects": [
-    {
-      "source": "https://efficoregroup.com/:path*",
-      "destination": "https://www.efficoregroup.com/:path*",
-      "permanent": true
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
