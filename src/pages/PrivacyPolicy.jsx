@@ -185,6 +185,7 @@ export default function PrivacyPolicy() {
           </div>
 
           {/* Section 2 */}
+          {/* sd */}
           <div className="policy-section">
             <h2>2. Information We Collect</h2>
             <p>We may collect and process the following types of information:</p>
