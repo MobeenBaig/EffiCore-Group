@@ -1805,7 +1805,7 @@ export default function Home2() {
                 <div className="contact-item-icon"><Clock size={24} /></div>
                 <div className="contact-item-text">
                   <label>Office Hours</label>
-                  <span>Monday – Friday, 8:30am – 6:00pm GMT</span>
+                  <span>Open 24/7</span>
                 </div>
               </div>
             </div>
@@ -1864,7 +1864,7 @@ export default function Home2() {
                   <input 
                     type="tel" 
                     name="phone"
-                    placeholder="+44 20 0000 0000"
+                    placeholder="+1(123) 456-7899"
                     value={formData.phone}
                     onChange={handleFormChange}
                   />
