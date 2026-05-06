@@ -115,9 +115,10 @@ Beyond scheduling, we optimize your calendar to reduce no-shows and improve pati
               width: '100%',
               minHeight: '100vh',
               borderRadius: '15% 0 0 20%',
+              overflow: 'hidden',
               backgroundImage: `url(${meetingImg})`,
               backgroundPosition: 'center',
-              backgroundSize: 'cover',
+              backgroundSize: '100% 100%', // Forces image to stretch and fill blob
               backgroundRepeat: 'no-repeat',
               opacity: 0,
               animation: 'fadeUp 0.8s 0.2s ease both',

@@ -125,9 +125,10 @@ stay focused on delivering high-quality patient care and achieving better outcom
               width: '100%',
               minHeight: '100vh',
               borderRadius: '15% 0 0 20%',
+              overflow: 'hidden',
               backgroundImage: `url(${meetingImg})`,
               backgroundPosition: 'center',
-              backgroundSize: 'cover',
+              backgroundSize: '100% 100%', // Forces image to stretch and fill blob
               backgroundRepeat: 'no-repeat',
               opacity: 0,
               animation: 'fadeUp 0.8s 0.2s ease both',

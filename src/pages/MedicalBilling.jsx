@@ -136,21 +136,22 @@ confidence.              </p>
             </div>
 
             {/* Right section - blob with meeting background image */}
-            <div className="content-image" style={{
-              position: 'relative',
-              width: '100%',
-              minHeight: '100vh',
-              borderRadius: '40% 0 0 30%',
-              backgroundImage: `url(${meetingImg})`,
-              backgroundPosition: 'center',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              opacity: 0,
-              animation: 'fadeUp 0.8s 0.2s ease both',
-              paddingLeft: '20px',
-              paddingRight: '20px'
-            }}>
-            </div>
+           <div className="content-image" style={{
+             position: 'relative',
+             width: '100%',
+             minHeight: '100vh',
+             borderRadius: '15% 0 0 20%',
+             overflow: 'hidden',
+             backgroundImage: `url(${meetingImg})`,
+             backgroundPosition: 'center',
+             backgroundSize: '100% 100%', // Forces image to stretch and fill blob
+             backgroundRepeat: 'no-repeat',
+             opacity: 0,
+             animation: 'fadeUp 0.8s 0.2s ease both',
+             paddingLeft: '20px',
+             paddingRight: '20px'
+           }}>
+           </div>
           </div>
         </section>
 

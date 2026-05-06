@@ -158,7 +158,7 @@ export default function Header() {
         <li><a href="#" onClick={(e) => { e.preventDefault(); navigateToSection('process'); }}>Process</a></li>
         <li><a href="#" onClick={(e) => { e.preventDefault(); navigateToSection('industries'); }}>Industries</a></li>
         <li><a href="#" onClick={(e) => { e.preventDefault(); navigateToSection('team'); }}>Team</a></li>
-        <li><a href="#contact" className="nav-cta" onClick={() => setMobileOpen(false)}>Get Started</a></li>
+        <li><a href="#contact" className="nav-cta" onClick={(e) => { e.preventDefault(); navigateToSection('contact'); }}>Get Started</a></li>
       </ul>
       <button
         className="hamburger"

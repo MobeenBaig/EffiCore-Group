@@ -203,4 +203,27 @@
   opacity: 1;
 }
 
+/* Global scrollbar styling for all pages */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--teal-mid) var(--cream);
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--teal-mid);
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 

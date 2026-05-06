@@ -94,7 +94,7 @@ export default function Pcmh() {
               opacity: 0,
               transform: 'translateY(32px)',
               animation: 'fadeUp 0.7s 0.3s ease both',
-              minHeight: '100vh',
+              minHeight: '85vh',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
@@ -109,21 +109,22 @@ As your PCMH support partner, we simplify and manage the entire process through 
             </div>
 
             {/* Right section - blob with meeting background image */}
-            <div className="content-image" style={{
-              position: 'relative',
-              width: '100%',
-              minHeight: '100vh',
-              borderRadius: '15% 0 0 20%',
-              backgroundImage: `url(${meetingImg})`,
-              backgroundPosition: 'center',
-              backgroundSize: 'cover',
-              backgroundRepeat: 'no-repeat',
-              opacity: 0,
-              animation: 'fadeUp 0.8s 0.2s ease both',
-              paddingLeft: '20px',
-              paddingRight: '20px'
-            }}>
-            </div>
+         <div className="content-image" style={{
+  position: 'relative',
+  width: '100%',
+  minHeight: '100vh',
+  borderRadius: '15% 0 0 20%',
+  overflow: 'hidden',
+  backgroundImage: `url(${meetingImg})`,
+  backgroundPosition: 'center',
+  backgroundSize: '100% 100%', // Forces image to stretch and fill blob
+  backgroundRepeat: 'no-repeat',
+  opacity: 0,
+  animation: 'fadeUp 0.8s 0.2s ease both',
+  paddingLeft: '20px',
+  paddingRight: '20px'
+}}>
+</div>
           </div>
         </section>
 
